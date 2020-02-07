@@ -3,6 +3,7 @@
 
 .preview-slider {
   position: relative;
+  overflow: hidden;
   &__item {
     display: flex;
     flex-direction: column;
@@ -24,6 +25,9 @@
       background-position: 58% center;
     }
   }
+  .container-fluid {
+    padding: 0;
+  }
   &__info {
     padding: 50px 0;
     padding-left: 75px;
@@ -32,10 +36,10 @@
       padding-left: 60px;
     }
     @include xs {
-      padding-left: 40px;
+      padding-left: 50px;
     }
     @include below(650px) {
-      padding: 50px 25px;
+      padding: 50px 35px;
       max-width: 240px;
     }
   }

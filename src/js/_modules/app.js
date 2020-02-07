@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         btnMenu.classList.add('btn-menu_active')
         sidebarMenu.classList.add('sidebar-menu_active');
         toggleScroll('hide');
-
         anime({
           targets: '.list-nav-sidebar__item, .sidebar-menu__bottom',
           easing: 'easeOutBack',
