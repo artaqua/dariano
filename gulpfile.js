@@ -210,5 +210,12 @@ gulp.task('deploy', async function () {
   })
 })
 
+/////////////////////////////// GULP BUILD
+gulp.task('build', gulp.series(
+  gulp.parallel('clean:build'),
+  gulp.parallel('htmlReload', 'style:build', 'js:build'),
+  gulp.parallel('img:build', 'fonts:build', 'resources:build', 'pngSprite', 'svgSprite')
+));
+
 
 
