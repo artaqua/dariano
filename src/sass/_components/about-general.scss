@@ -1,0 +1,231 @@
+@import '_modules/variables';
+@import '_modules/mixins';
+
+.about-general {
+  &__container {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 200px 0;
+    @include sm {
+      padding: 80px 0;
+    }
+    @include xs {
+      padding: 60px 0;
+    }
+    @include below(500px) {
+      padding: 40px 0;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include sm {
+      padding: 0 40px;
+    }
+    @include xs {
+      padding: 0 20px;
+    }
+    @include below(500px) {
+      padding: 0;
+    }
+  }
+  &__question {
+    color: $white;
+    font-size: 40px;
+    font-family: $font-1;
+    font-weight: 300;
+    padding-left: 210px;
+    margin: 0;
+    @include md {
+      padding-left: 100px;
+    }
+    @include sm {
+      padding-left: 0;
+      font-size: 24px;
+    }
+    @include below(500px) {
+      font-size: 18px;
+    }
+  }
+  &__info {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+    @include sm {
+      max-width: 100%;
+      order: 1;
+    }
+  }
+  &__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__title {
+    font-size: 54px;
+    font-weight: 700;
+    font-style: italic;
+    color: $white;
+    margin: 0;
+    margin-top: 5px;
+    @include sm {
+      font-size: 40px;
+    }
+    @include below(500px) {
+      font-size: 24px;
+    }
+  }
+  &__link {
+    color: $white;
+    @include below(500px) {
+      font-size: 12px;
+    }
+  }
+  &__link-icon {
+    width: 9px;
+    height: 9px;
+    fill: $white;
+  }
+  &__descr {
+    font-size: 18px;
+    line-height: 28px;
+    color: $white;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    @include sm {
+      font-size: 14px;
+      line-height: normal;
+    }
+    @include below(500px) {
+      font-size: 13px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+  }
+  &__door {
+    z-index: 1;
+    position: absolute;
+    top: 100px;
+    right: calc(50% - 760px);
+    @include sm {
+      display: none;
+    }
+  }
+}
+.materials {
+  z-index: 1;
+  position: absolute;
+  top: 250px;
+  left: calc(50% - 555px);
+  @include md {
+    top: 300px;
+    left: calc(50% - 505px);
+  }
+  @include sm {
+    position: static;
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -10px;
+    margin-bottom: -30px;
+  }
+  &__title {
+    font-family: $font-2;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 16px;
+    color: $white;
+    margin: 0;
+    @include sm {
+      line-height: 18px;
+      max-width: 180px;
+      br {
+        display: none;
+      }
+    }
+  }
+  &__img {
+    position: absolute;
+    top: -8px;
+    left: 75px;
+    @include sm {
+      position: static;
+      margin-left: -40px;
+    }
+  }
+}
+.list-features-about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  @include below(600px) {
+    justify-content: center;
+  }
+  &__item {
+    position: relative;
+    flex-basis: 33.3%;
+    max-width: 33.3%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    @include below(600px) {
+      flex-basis: 50%;
+      max-width: 50%;
+      margin: 15px 0;
+    }
+  }
+  &__cont-number {
+    position: relative;
+  }
+  &__number {
+    z-index: 1;
+    position: absolute;
+    top: -5px;
+    left: -20px;
+    color: rgba(0,0,0,0.2);
+    font-family: $font-2;
+    font-size: 80px;
+    font-style: italic;
+    line-height: 18px;
+    @include below(600px) {
+      top: 0;
+      font-size: 65px;
+    }
+  }
+  &__icon {
+    z-index: 2;
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    fill: #D6C29D;
+    margin-right: 8px;
+  }
+  &__descr {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 14px;
+    color: $white;
+    margin: 0;
+    @include below(600px) {
+      font-size: 12px;
+    }
+  }
+}

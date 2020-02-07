@@ -1,0 +1,42 @@
+header.header-page
+  .container-fluid
+    .header-page__inner
+      .header-page__top
+        .header-page__left-content
+          a.mailto(href="mailto:info.pochtaaa@mail.ru")
+            +svg('mail', 'mailto__icon')
+            | info.pochtaaa@mail.ru
+          a.shops(href="#") Магазины
+
+        button.btn-menu.header-page__btn-menu
+          span.btn-menu__lines
+            span.btn-menu__line.btn-menu__line_one
+            span.btn-menu__line.btn-menu__line_two
+            span.btn-menu__line.btn-menu__line_three
+        a.logo(href="index.html")
+          img(src="assets/img/logo.png", alt="")
+        
+        .request-call
+          a.request-call__numb(href="tel:+88461001010")
+            +svg('phone', 'request-call__icon')
+            | 8 (846) 100-10-10
+          a.request-call__link(href="#") Заказать звонок
+
+      .header-page__bottom
+        ul.list-nav-page
+          li.list-nav-page__item
+            a.list-nav-page__link(href="#") Главная
+          li.list-nav-page__item
+            a.list-nav-page__link(href="#") Каталог
+          li.list-nav-page__item
+            a.list-nav-page__link(href="#") О нас
+          li.list-nav-page__item
+            a.list-nav-page__link(href="#") Акции
+          li.list-nav-page__item
+            a.list-nav-page__link(href="#") Доставка
+          li.list-nav-page__item
+            a.list-nav-page__link(href="#") Оплата
+          li.list-nav-page__item
+            a.list-nav-page__link(href="#") Контакты
+          li.list-nav-page__item
+            a.list-nav-page__link(href="#") Отзывы

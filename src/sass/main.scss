@@ -1,0 +1,31 @@
+/* Modules */
+// @import '_modules/fonts';
+@import '_modules/variables';
+@import '_modules/mixins';
+@import '_modules/settings';
+@import '_modules/png-sprite';
+@import '_modules/animation';
+
+/* Layout */
+@import '_layout/loader';
+@import '_layout/common';
+@import '_layout/header';
+@import '_layout/sidebar-menu';
+@import '_layout/footer';
+// @import '_layout/popups';
+
+/* Components */
+@import '_components/preview-slider';
+@import '_components/popular-styles';
+@import '_components/about-general';
+@import '_components/news';
+
+/* Plagins */
+/* Imports from node_modules */
+@import 'swiper/dist/css/swiper.css';
+// @import 'lightgallery.js/dist/css/lightgallery.css';
+/* Change plagins */
+@import '_plagins/change-plagins';
+
+
+

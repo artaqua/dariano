@@ -1,0 +1,111 @@
+.footer-page {
+  flex: 0 0 auto;
+  width: 100%;
+  background: #393939;
+  padding: 40px 0;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 60px;
+    margin: 0 -10px;
+    @include sm {
+      padding: 0 40px;
+    }
+    @include xs {
+      padding: 0 20px;
+    }
+    @include below(550px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @include below(500px) {
+      padding: 0;
+    }
+  }
+  &__col-left {
+    flex-basis: 300px;
+    max-width: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 10px;
+    @include sm {
+      flex-basis: 220px;
+      max-width: 220px;
+    }
+    @include below(550px) {
+      flex-basis: 0;
+      max-width: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__col-right {
+    flex-grow: 1;
+    padding: 0 10px;
+    @include below(550px) {
+      margin-top: 20px;
+    }
+  }
+  &__call {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: $white;
+    margin-top: 25px;
+    @include below(550px) {
+      margin-top: 20px;
+    }
+  }
+  &__email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    color: $white;
+    margin-top: 15px;
+    @include below(550px) {
+      margin-top: 10px;
+    }
+  }
+  &__icon {
+    width: 14px;
+    height: 14px;
+    fill: $gold;
+    margin-right: 10px;
+  }
+}
+.list-footer-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 400px;
+  @include sm {
+    max-width: none;
+  }
+  @include below(550px) {
+    justify-content: center;
+  }
+  &__item {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 35px;
+    @include sm {
+      margin-right: 20px;
+    }
+    @include below(550px) {
+      margin: 7px 10px;
+    }
+  }
+  &__link {
+    display: block;
+    font-size: 16px;
+    color: $white;
+    @include sm {
+      font-size: 14px;
+    }
+  }
+}

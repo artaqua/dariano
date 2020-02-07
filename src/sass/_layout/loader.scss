@@ -1,0 +1,52 @@
+.loader {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: $white;
+  transition: opacity 500ms ease 300ms, visibility 500ms ease 300ms;
+  &_hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &__elems {
+    width: 50px;
+    height: 50px;
+    animation: rotateLoader 1.6s linear infinite;
+    transform-origin: bottom center;
+  }
+  &__circle {
+    animation: growLoader 1.2s linear infinite;
+    background-color: $gold;
+    // border-radius: 50%;
+    display: inline-block;
+    margin: -10px;
+    height: 40px;
+    width: 40px;
+    transform: scale(0);
+    &_two {
+      animation-delay: .6s;
+      background-color: $gold;
+    }
+  }
+}
+
+@keyframes rotateLoader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes growLoader {
+  50% {
+    transform: scale(0.8);
+  }
+}

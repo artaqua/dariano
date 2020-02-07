@@ -1,0 +1,50 @@
+/////////////////////////////// VARIABLES
+
+$white:                         #fff;
+$black:                         #393939;
+$grey:                          #939598;
+$light:                         #fcecd5;
+$blue:                          #3bbbcd;
+$red:                           #eb5c5d;
+$green:                         #409945;
+$pink:                          #9f5d78;
+$yellow:                        #ffef3c;
+$gold:                          #D6C29D;
+
+$base-color:                    $black;
+$body-bg:                       $white;
+$a-color:                       $black;
+$a-color-hover:                 $gold;
+$h-color:                       $base-color;
+$p-color:                       $base-color;
+
+$selection-bg:                  $gold;
+
+$border-color:                  $grey;
+$border-color-hover:            lighten($border-color, 15%);
+
+$font-1:                        'Open Sans', sans-serif;
+$font-2:                        'Playfair Display', serif;
+$font-base:                     $font-1;
+$html-font-size:                100%;
+
+$font-size:                     14px;
+$h1-size:                       40px;
+$h2-size:                       36px;
+$h3-size:                       30px;
+$h4-size:                       24px;
+
+$h-font:                        $font-2;
+$h-font-width:                  500;
+
+$p-line-height:                 1.6;
+$h-line-height:                 1.2;
+
+$container-fluid-max-width:     1200px;
+
+$easing:                        cubic-bezier(0.28, 0.57, 0.22, 0.76);
+
+
+
+
+

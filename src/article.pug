@@ -1,0 +1,16 @@
+extends pug/base
+
+append vars
+  - var title = 'Article'
+
+block styles
+  link(href=`assets/css/main.css` rel="stylesheet")
+  link(href=`assets/css/page-article.css` rel="stylesheet")
+
+block content
+  main
+    .layout__content
+      .page-article
+        .container-fluid
+          h3.title-md.page-article__title Page article
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae molestiae facere suscipit harum quae ab ipsum sit voluptate omnis laborum nisi, explicabo, fugit illo sint fugiat nam dolorum quod libero!

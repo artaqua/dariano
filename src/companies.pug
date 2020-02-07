@@ -1,0 +1,16 @@
+extends pug/base
+
+append vars
+  - var title = 'Companies'
+
+block styles
+  link(href=`assets/css/main.css` rel="stylesheet")
+  link(href=`assets/css/page-companies.css` rel="stylesheet")
+
+block content
+  main
+    .layout__content
+      .page-companies
+        .container-fluid
+          h3.title-md.page-companies__title Page companies
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae molestiae facere suscipit harum quae ab ipsum sit voluptate omnis laborum nisi, explicabo, fugit illo sint fugiat nam dolorum quod libero!

@@ -1,0 +1,123 @@
+@import '_modules/variables';
+@import '_modules/mixins';
+
+.preview-slider {
+  position: relative;
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F3F2F0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 530px;
+    @include xs {
+      min-height: 400px;
+    }
+    @include below(650px) {
+      min-height: 300px;
+      background-position: 66% center;
+    }
+    @include below(450px) {
+      background-position: 58% center;
+    }
+  }
+  &__info {
+    padding: 50px 0;
+    padding-left: 75px;
+    max-width: 400px;
+    @include sm {
+      padding-left: 60px;
+    }
+    @include xs {
+      padding-left: 40px;
+    }
+    @include below(650px) {
+      padding: 50px 25px;
+      max-width: 240px;
+    }
+  }
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 1600ms ease 600ms, transform 1600ms ease 600ms;
+    @include xs {
+      font-size: 24px;
+      line-height: normal;
+    }
+    @include below(650px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+  &__descr {
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 18px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 1600ms ease 600ms, transform 1600ms ease 600ms;
+    @include xs {
+      font-size: 16px;
+      line-height: normal;
+    }
+    @include below(650px) {
+      font-size: 11px;
+      line-height: 18px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+  }
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-2;
+    font-size: 18px;
+    font-weight: 700;
+    color: $white;
+    width: 100%;
+    max-width: 280px;
+    height: 70px;
+    background-color: #00523B;
+    box-shadow: 0px 4.42475px 4.67282px rgba(0, 82, 59, 0.15909), 0px 11.2422px 11.3956px rgba(0, 82, 59, 0.250598), 0px 22.4482px 24.6031px rgba(0, 82, 59, 0.319192), 0px 46px 77px rgba(0, 82, 59, 0.38);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1600ms ease 600ms, transform 1600ms ease 600ms, background-color 300ms ease, color 300ms ease;
+    @include xs {
+      font-size: 14px;
+      height: 50px;
+      max-width: 200px;
+      border-radius: 6px;
+    }
+    @include below(650px) {
+      font-size: 12px;
+      height: 40px;
+      max-width: 180px;
+      border-radius: 4px;
+    }
+    &:hover {
+      color: $white;
+      background-color: lighten(#00523B,5%);
+    }
+  }
+  .swiper-slide-active .preview-slider__title,
+  .swiper-slide-active .preview-slider__descr {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .swiper-slide-active .preview-slider__btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

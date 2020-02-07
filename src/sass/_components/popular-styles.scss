@@ -1,0 +1,152 @@
+@import '_modules/variables';
+@import '_modules/mixins';
+
+.popular-styles {
+  &__list-popular-styles {
+    margin-top: 20px;
+  }
+}
+.list-popular-styles {
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+    @include xs {
+      margin: 0;
+    }
+  }
+  &__col {
+    flex-basis: 50%;
+    max-width: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 16px;
+    margin-bottom: 32px;
+    @include xs {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+    @include below(450px) {
+      margin-bottom: 5px;
+    }
+  }
+  &__item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 265px;
+    background-color: $red;
+    transition: all 600ms ease;
+    @include md {
+      min-height: 240px;
+    }
+    @include xs {
+      min-height: 180px;
+    }
+    &:hover {
+      box-shadow: 0px 0px 0px 1px $gold, 0 4px 20px 0 rgba(0,0,0,0.2);
+      .list-popular-styles__title {
+        transform: translateX(10px);
+      }
+    }
+    &_purple {
+      background-color: #ecddc0;
+    }
+    &_green {
+      background-color: #104738;
+      .list-popular-styles__title {
+        color: $white;
+      }
+      .list-popular-styles__descr {
+        color: $gold;
+      }
+    }
+    &_grey {
+      background-color: #ecebeb;
+      .list-popular-styles__descr {
+        color: #959595;
+      }
+    }
+    &_dark {
+      background-color: #393939;
+      .list-popular-styles__title {
+        color: $gold;
+      }
+      .list-popular-styles__descr {
+        color: #DFD8CA;
+      }
+    }
+  }
+  &__info {
+    padding-left: 200px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    @include md {
+      padding-left: 120px;
+      padding-right: 30px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    @include sm {
+      padding-left: 110px;
+      padding-right: 20px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    transition: all 600ms ease;
+    @include md {
+      font-size: 16px;
+    }
+    @include below(450px) {
+      font-size: 14px;
+    }
+  }
+  &__descr {
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0;
+    margin-top: 10px;
+    @include md {
+      font-size: 12px;
+      line-height: normal;
+    }
+    @include sm {
+      font-size: 11px;
+    }
+    @include below(450px) {
+      font-size: 10px;
+      margin-top: 8px;
+    }
+  }
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    width: 140px;
+    height: 100%;
+    max-height: 220px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    @include md {
+      left: 20px;
+      width: 80px;
+    }
+    @include sm {
+      left: 15px;
+    }
+  }
+}

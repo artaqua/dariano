@@ -1,0 +1,146 @@
+extends pug/base
+
+append vars
+  - var title = 'Home'
+
+block styles
+  link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Playfair+Display:400,400i,700,700i&display=swap&subset=cyrillic" rel="stylesheet")
+  link(href=`assets/css/main.css` rel="stylesheet")
+
+block content
+  main
+    .layout__content
+      .page-index
+
+        // Preview slider
+        .preview-slider
+          .swiper-wrapper
+            .swiper-slide
+              .preview-slider__item.lazy(data-bg="url(assets/img/preview-slider/slide.jpg)")
+                .container-fluid
+                  .preview-slider__info
+                    h3.preview-slider__title Межкомнатные двери с гарантией качества
+                    p.preview-slider__descr Это просто пример УТП на баннере. Данный шаблон можно будет заверстать 
+                    a.preview-slider__btn Посмотреть каталог
+            .swiper-slide
+              .preview-slider__item.lazy(data-bg="url(assets/img/preview-slider/slide-2.jpg)")
+                .container-fluid
+                  .preview-slider__info
+                    h3.preview-slider__title Lorem ipsum dolor sit amet.
+                    p.preview-slider__descr Это просто пример УТП на баннере. Данный шаблон можно будет заверстать 
+                    a.preview-slider__btn Посмотреть каталог
+            .swiper-slide
+              .preview-slider__item.lazy(data-bg="url(assets/img/preview-slider/slide.jpg)")
+                .container-fluid
+                  .preview-slider__info
+                    h3.preview-slider__title Lorem ipsum dolor sit amet, consectetur adipisicing.
+                    p.preview-slider__descr Это просто пример УТП на баннере. Данный шаблон можно будет заверстать 
+                    a.preview-slider__btn Посмотреть каталог
+          .swiper-pagination
+          
+        // Popular styles
+        .container-fluid
+          .popular-styles.layout__pad-top
+            .box-section.lazy(data-bg="url(assets/img/popular-styles/dots.png)")
+              .box-section__head
+                .title-md Популярные стили
+                a.box-section__link(href="#") Перейти в каталог
+                  +svg('arrow-right', 'box-section__icon')
+              .list-popular-styles.popular-styles__list-popular-styles
+                .list-popular-styles__row
+                  .list-popular-styles__col
+                    a.list-popular-styles__item.list-popular-styles__item_purple(href="#")
+                      .list-popular-styles__info 
+                        h4.list-popular-styles__title Классические двери
+                        p.list-popular-styles__descr Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor netus commodo mattis sapien sit quam massa eros. Sed eu orci at elementum mi sit. Volutpat turpis feugiat lorem cras eu morbi ipsum
+                      .list-popular-styles__img.lazy(data-bg="url(assets/img/popular-styles/product-1.png)")
+                  .list-popular-styles__col
+                    a.list-popular-styles__item.list-popular-styles__item_green(href="#")
+                      .list-popular-styles__info 
+                        h4.list-popular-styles__title Неоклассика
+                        p.list-popular-styles__descr Двери в стиле «неоклассика», изготовленные из массива сосны. Двери могут быть покрыты натуральным шпоном, либо выполнены в эмалевых покрытиях. Для остекления дверей из наших коллекций, мы используются безопасные закаленные стекла.
+                      .list-popular-styles__img.lazy(data-bg="url(assets/img/popular-styles/product-2.png)")
+                  .list-popular-styles__col
+                    a.list-popular-styles__item.list-popular-styles__item_grey(href="#")
+                      .list-popular-styles__info 
+                        h4.list-popular-styles__title Неоклассика
+                        p.list-popular-styles__descr Двери в стиле «неоклассика», изготовленные из массива сосны. Двери могут быть покрыты натуральным шпоном, либо выполнены в эмалевых покрытиях. Для остекления дверей из наших коллекций, мы используются безопасные закаленные стекла.
+                      .list-popular-styles__img.lazy(data-bg="url(assets/img/popular-styles/product-3.png)")
+                  .list-popular-styles__col
+                    a.list-popular-styles__item.list-popular-styles__item_dark(href="#")
+                      .list-popular-styles__info 
+                        h4.list-popular-styles__title Классические двери
+                        p.list-popular-styles__descr Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor netus commodo mattis sapien sit quam massa lorem cras eu morbi ipsum
+                      .list-popular-styles__img.lazy(data-bg="url(assets/img/popular-styles/product-4.png)")
+              a.box-section__link-mobile(href="#") Перейти в каталог
+                +svg('arrow-right', 'box-section__icon-mobile')
+
+      // About general
+      .about-general.layout__pad-top
+        .about-general__container.lazy(data-bg="url(assets/img/about-general/bg.png)")
+          .container-fluid
+            .about-general__content
+              .materials 
+                img.materials__img.lazy(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 176 179'%3E%3C/svg%3E" data-src="assets/img/about-general/material.png", alt="")
+                h5.materials__title только натуральные
+                  br
+                  | материалы от 
+                  br
+                  | проверенных 
+                  br
+                  | поставщиков
+              img.about-general__door.lazy(src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 583 583'%3E%3C/svg%3E" data-src="assets/img/about-general/door.png", alt="")
+              h4.about-general__question Что такое
+              .about-general__info
+                .about-general__head
+                  h4.about-general__title двери Dariano
+                  a.about-general__link(href="#") Подробнее
+                    +svg('arrow-right', 'about-general__link-icon')
+                p.about-general__descr Двери в стиле «неоклассика», изготовленные из массива сосны. Двери могут быть покрыты натуральным шпоном, либо выполнены в эмалевых покрытиях. Для остекления дверей из наших коллекций, мы используются безопасные закаленные стекла.
+                .list-features-about
+                  .list-features-about__item
+                    .list-features-about__cont-number
+                      +svg('diamond', 'list-features-about__icon')
+                      span.list-features-about__number 1
+                    p.list-features-about__descr Европейское 
+                      br
+                      | качество
+                  .list-features-about__item
+                    .list-features-about__cont-number
+                      +svg('star', 'list-features-about__icon')
+                      span.list-features-about__number 2
+                    p.list-features-about__descr Множество 
+                      br
+                      | наград и отзывов
+                  .list-features-about__item
+                    .list-features-about__cont-number
+                      +svg('door', 'list-features-about__icon')
+                      span.list-features-about__number 3
+                    p.list-features-about__descr Более 18 лет 
+                      br
+                      | на рынке
+      
+      // News
+      .news.layout__pad-top
+        .container-fluid
+          .box-section.lazy(data-bg="url(assets/img/popular-styles/dots.png)")
+            .box-section__head
+              .title-md Свежие новости
+              a.box-section__link(href="#") Смотреть все
+                +svg('arrow-right', 'box-section__icon')
+            .list-news
+              a.list-news__item(href="#")
+                .list-news__wrapper-img
+                  .list-news__img.lazy(data-bg="url(assets/img/news/news-1.jpg)")
+                .list-news__info
+                  h4.list-news__title Заголовок для новости
+                  p.list-news__descr Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor netus commodo mattis sapien sit quam massa eros. Sed eu orci at elementum mi sit. Volutpat turpis feugiat lorem cras
+              a.list-news__item(href="#")
+                .list-news__wrapper-img
+                  .list-news__img.lazy(data-bg="url(assets/img/news/news-2.jpg)")
+                .list-news__info
+                  h4.list-news__title Заголовок для новости
+                  p.list-news__descr Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor netus commodo mattis sapien sit quam massa eros. Sed eu orci at elementum mi sit. Volutpat turpis feugiat lorem cras eu morbi ipsum
+            a.box-section__link-mobile(href="#") Смотреть все
+              +svg('arrow-right', 'box-section__icon-mobile')
+
