@@ -1,0 +1,46 @@
+@import '_modules/variables';
+@import '_modules/mixins';
+
+.category {
+  &__list-category {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+}
+.category-head-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #F4F4F4;
+  padding: 15px 0;
+  &__icon {
+    width: 16px;
+    height: 16px;
+    fill: $gold;
+    margin-right: 15px;
+  }
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+    color: $gold;
+  }
+}
+.list-category {
+  display: flex;
+  flex-direction: column;
+  &__item {
+    margin: 12px 0;
+  }
+  &__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+  }
+  &__icon {
+    width: 9px;
+    height: 9px;
+    fill: #9B9B9B;
+    margin-left: 8px;
+  }
+}

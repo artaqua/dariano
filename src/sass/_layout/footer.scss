@@ -6,14 +6,7 @@
   &__container {
     display: flex;
     flex-direction: row;
-    padding: 0 60px;
     margin: 0 -10px;
-    @include sm {
-      padding: 0 40px;
-    }
-    @include xs {
-      padding: 0 20px;
-    }
     @include below(550px) {
       flex-direction: column;
       align-items: center;

@@ -33,14 +33,13 @@ body {
 }
 
 main {
-  width: 100vw;
+  width: 100%;
 }
 
 .container-fluid {
   width: 100%;
   max-width: $container-fluid-max-width;
 }
-
 
 ul {
   list-style: none;

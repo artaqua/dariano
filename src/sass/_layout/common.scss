@@ -200,17 +200,22 @@ main {
   &__wrapper {
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 80px;
     @include below(1050px) {
       flex-wrap: wrap;
     }
   }
   &__sidebar {
-    width: 260px;
+    width: 240px;
     flex-grow: 0;
     flex-shrink: 0;
     @include below(1050px) {
       width: 100%;
     }
+  }
+  &__container {
+    width: 100%;
+    flex-grow: 1;
+    margin-left: 60px;
   }
 }
