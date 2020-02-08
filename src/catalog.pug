@@ -1,0 +1,132 @@
+extends pug/base
+
+append vars
+  - var title = 'Catalog'
+
+block styles
+  link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:400,400i,700,700i&display=swap&subset=cyrillic" rel="stylesheet")
+  link(href=`assets/css/main.css` rel="stylesheet")
+
+block content
+  main
+    .layout__content
+      .page-catalog
+        .container-fluid
+          .layout__wrapper
+            .layout__sidebar
+              // Sidebar
+              aside.sidebar-page
+                .category
+                  a.category-head-link(href="#")
+                    +svg('catalog', 'category-head-link__icon')
+                    span.category-head-link__name Категории
+                  ul.list-category.category__list-category
+                    li.list-category__item 
+                      a.list-category__link Классические двери
+                        +svg('arrow-category', 'list-category__icon')
+                    li.list-category__item 
+                      a.list-category__link Неоклассика
+                        +svg('arrow-category', 'list-category__icon')
+                    li.list-category__item 
+                      a.list-category__link Современный стиль
+                        +svg('arrow-category', 'list-category__icon')
+                    li.list-category__item 
+                      a.list-category__link Дизайн
+                        +svg('arrow-category', 'list-category__icon')
+                    li.list-category__item 
+                      a.list-category__link Цельностеклянные двери
+                        +svg('arrow-category', 'list-category__icon')
+
+
+            .layout__container
+              // Content
+              .breadcrumb
+                ul.breadcrumb__list
+                  li.breadcrumb__item
+                    a.breadcrumb__link(href="#") Главная
+                  li.breadcrumb__item Каталог
+
+              .title-sm Каталог
+
+              .list-catalog
+                h4.list-catalog__title Классические двери
+                .list-catalog__row
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-1.jpg)" href="collection.html")
+                      span.list-catalog__name Luxury
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-2.jpg)" href="#")
+                      span.list-catalog__name Sapporo
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-3.jpg)" href="#")
+                      span.list-catalog__name Isabella
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-4.jpg)" href="#")
+                      span.list-catalog__name Vicenza
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-5.jpg)" href="#")
+                      span.list-catalog__name Omega
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-6.jpg)" href="#")
+                      span.list-catalog__name Serial
+
+              .list-catalog
+                h4.list-catalog__title Неоклассика
+                .list-catalog__row
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-7.jpg)" href="#")
+                      span.list-catalog__name Neoclassica
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-8.jpg)" href="#")
+                      span.list-catalog__name Manchester
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-9.jpg)" href="#")
+                      span.list-catalog__name Neo
+
+              .list-catalog
+                h4.list-catalog__title Современный стиль
+                .list-catalog__row
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-10.jpg)" href="#")
+                      span.list-catalog__name Galaxy
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-11.jpg)" href="#")
+                      span.list-catalog__name Cityline
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-12.jpg)" href="#")
+                      span.list-catalog__name Freeline
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-13.jpg)" href="#")
+                      span.list-catalog__name Shotty
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-14.jpg)" href="#")
+                      span.list-catalog__name Space
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-15.jpg)" href="#")
+                      span.list-catalog__name Trend
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-16.jpg)" href="#")
+                      span.list-catalog__name Vector
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-17.jpg)" href="#")
+                      span.list-catalog__name Vita
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-18.jpg)" href="#")
+                      span.list-catalog__name Rondo
+
+              .list-catalog
+                h4.list-catalog__title Дизайн
+                .list-catalog__row
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-19.jpg)" href="#")
+                      span.list-catalog__name Design
+
+              .list-catalog
+                h4.list-catalog__title Цельностеклянные двери
+                .list-catalog__row
+                  .list-catalog__col
+                    a.list-catalog__item.lazy(data-bg="url(assets/img/catalog/img-20.jpg)" href="#")
+                      span.list-catalog__name Glass
+        
+        
+

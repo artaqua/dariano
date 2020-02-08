@@ -1,0 +1,30 @@
+@import '_modules/variables';
+@import '_modules/mixins';
+
+.jumbotron {
+  &__container {
+    padding: 35px 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include xs {
+      padding: 25px 20px;
+    }
+  }
+  &__title {
+    font-size: 26px;
+    margin: 0;
+    @include xs {
+      font-size: 18px;
+    }
+  }
+  &__descr {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0;
+    margin-top: 15px;
+    @include xs {
+      font-size: 12px;
+    }
+  }
+}

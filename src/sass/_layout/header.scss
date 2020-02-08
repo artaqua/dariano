@@ -5,7 +5,10 @@
   // left: 0;
   width: 100%;
   background: $white;
-  // box-shadow: 0 4px 20px 0 rgba(207,218,229,.6);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+  @include sm {
+    
+  }
   &__inner {
     display: flex;
     flex-direction: column;
