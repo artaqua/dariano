@@ -143,64 +143,69 @@ document.addEventListener("DOMContentLoaded", () => {
   //   }
   // })();
 
-  // // Animations
-  // (function () {
-  //   const animServices = document.querySelector('.services__row');
+  // Animations
+  (function () {
 
-  //   function doAnimate() {
-  //     anime({
-  //       targets: '.services__row, .services__col',
-  //       easing: 'easeInOutQuad',
-  //       opacity: [0,1],
-  //       rotateX: [-45,0],
-  //       translateY: [-20,0],
-  //       duration: 1000,
-  //       delay: anime.stagger(100, {start: 300})
-  //     });
-  //   }
-
-  //   // Когда доскролили до елемента начать анимацию
-  //   if ( animServices ) {
-  //     const waypoint = new Waypoint({
-  //       element: animServices,
-  //       handler: function(direction) {
-  //         if( direction === 'down' ) {
-  //           doAnimate();
-  //           // Animate once
-  //           this.destroy();
-  //         }
-  //       },
-  //       offset: '100%'
-  //     });
-  //   }
-
-  //   const featuresSpecialCol = document.querySelector('.features-special');
-
-  //   if (featuresSpecialCol) {
-  //     const waypoint = new Waypoint({
-  //       element: featuresSpecialCol,
-  //       handler: function(direction) {
-  //         if( direction === 'down' ) {
-  //           console.log('test');
-  //           anime({
-  //             targets: '.features-special__col',
-  //             easing: 'easeInOutSine',
-  //             scale: [0.8,1],
-  //             opacity: [0,1],
-  //             rotateX: [90,0],
-  //             translateY: ['-50%',0],
-  //             duration: 1200,
-  //             delay: anime.stagger(120, {start: 300})
-  //           });
+    // Catalog
+    const listCatalog = document.querySelector('.list-catalog');
+    if (listCatalog) {
+      const waypoint = new Waypoint({
+        element: listCatalog,
+        handler: function(direction) {
+          if( direction === 'down' ) {
+            anime({
+              targets: '.list-catalog__title',
+              easing: 'easeInOutSine',
+              opacity: [0,1],
+              translateX: ['-20px', 0],
+              duration: 1200,
+              delay: anime.stagger(120, {start: 300})
+            });
+            anime({
+              targets: '.list-catalog__col',
+              easing: 'easeInOutSine',
+              scale: [1.2,1],
+              opacity: [0,1],
+              translateY: ['25%', 0],
+              rotateY: ['45deg',0],
+              duration: 1200,
+              delay: anime.stagger(120, {start: 300})
+            });
             
-  //           // Animate once
-  //           this.destroy();
-  //         }
-  //       },
-  //       offset: '100%'
-  //     });
-  //   }
-  // })();
+            // Animate once
+            this.destroy();
+          }
+        },
+        offset: '100%'
+      });
+    }
+
+    // Collection
+    const listCollection = document.querySelector('.list-collection');
+    if (listCollection) {
+      const waypoint = new Waypoint({
+        element: listCollection,
+        handler: function(direction) {
+          if( direction === 'down' ) {
+            anime({
+              targets: '.list-collection__col',
+              easing: 'easeInOutSine',
+              scale: [0.8,1],
+              opacity: [0,1],
+              translateX: ['10%', 0],
+              rotateX: ['45deg',0],
+              duration: 1200,
+              delay: anime.stagger(120, {start: 300})
+            });
+            
+            // Animate once
+            this.destroy();
+          }
+        },
+        offset: '100%'
+      });
+    }
+  })();
   
 
 });
