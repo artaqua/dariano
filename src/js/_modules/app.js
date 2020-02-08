@@ -14,20 +14,17 @@ import {
 } from './functions.js';
 
 // APP
-let lazyLoadInstance = new LazyLoad({
-  elements_selector: ".lazy"
-});
-
 // Event DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
 
-  lazyLoadInstance.loadAll();
-
-  // Loader Page
-  (function() {
-    const loader = document.querySelector('.loader');
-    loader.classList.add('loader_hide');
-  })();
+  // Loader and lazy load img
+  let lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy",
+    callback_loaded: function() {
+      const loader = document.querySelector('.loader');
+      loader.classList.add('loader_hide');
+    }
+  });
 
   // Menu
   const btnMenu = document.querySelector('.btn-menu');
