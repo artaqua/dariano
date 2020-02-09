@@ -17,14 +17,14 @@ import {
 // Event DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Loader and lazy load img
+  // Lazy load imgs
   let lazyLoadInstance = new LazyLoad({
     elements_selector: ".lazy",
-    callback_loaded: function() {
-      const loader = document.querySelector('.loader');
-      loader.classList.add('loader_hide');
-    }
   });
+
+  // Loader
+  const loader = document.querySelector('.loader');
+  loader.classList.add('loader_hide');
 
   // Menu
   const btnMenu = document.querySelector('.btn-menu');

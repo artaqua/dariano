@@ -1,5 +1,5 @@
 .sidebar-menu {
-  z-index: 500;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,13 +18,13 @@
     display: block !important;
   }
   &_active {
-    transform: rotateY(0deg);
+    transform: rotateY(0);
     .sidebar-menu__close {
       transform: rotate(0);
     }
   }
   &__close {
-    z-index: 15;
+    z-index: 200;
     position: absolute;
     right: 10px;
     top: 20px;
@@ -51,7 +51,6 @@
     }
   }
   &__body {
-    position: relative;
     width: 100%;
   }
   &__nav-page {
@@ -65,12 +64,10 @@
   }
 }
 .list-nav-sidebar {
-  z-index: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
   &__item {
-    position: relative;
     width: 100%;
     user-select: none;
     border-bottom: 1px solid #EEEEEE;
