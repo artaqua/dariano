@@ -107,7 +107,7 @@
       min-height: 120px;
     }
     &:hover {
-      box-shadow: 0px 0px 0px 2px #D6C29D, 0 6px 30px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 0 2px $gold, 0 6px 30px 0 rgba(0, 0, 0, 0.2);
       .list-catalog__name {
         transform: translateX(10px);
       }
@@ -231,7 +231,7 @@
       min-height: 220px;
     }
     &:hover {
-      box-shadow: 0px 0px 0px 2px #D6C29D, 0 6px 30px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
       .list-collection__name {
         transform: translateX(10px);
       }
