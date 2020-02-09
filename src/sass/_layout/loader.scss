@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   background: $white;
-  transition: opacity 400ms ease 200ms, visibility 400ms ease 200ms;
+  transition: opacity 500ms ease 400ms, visibility 500ms ease 400ms;
   &_hide {
     opacity: 0;
     visibility: hidden;
