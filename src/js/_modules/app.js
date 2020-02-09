@@ -23,8 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Loader
-  const loader = document.querySelector('.loader');
-  loader.classList.add('loader_hide');
+  setTimeout(() => {
+    const loader = document.querySelector('.loader');
+    loader.classList.add('loader_hide');
+  }, 200);
 
   // Menu
   const btnMenu = document.querySelector('.btn-menu');
