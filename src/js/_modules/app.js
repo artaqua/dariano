@@ -10,8 +10,9 @@ import {
   hasClass,
   slideToggle,
   slideUp,
-  slideDown
+  slideDown,
 } from './functions.js';
+import { customSelect } from './customSelect.js';
 
 // APP
 // Event DOM Ready
@@ -206,5 +207,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })();
   
+  // Select
+  customSelect();
+
+  // toggle options
+  const linksOption = document.querySelectorAll('.list-options__link');
+  if ( linksOption ) {
+    linksOption.forEach(function(link) {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const body = event.currentTarget.closest('.list-options__item').querySelector('.list-options__body');
+        slideToggle(body, 500);
+      });
+    });
+  }
+
+  // toggle full materials
+  const linksMaterialMore = document.querySelectorAll('.list-materials__more');
+  if ( linksMaterialMore ) {
+    linksMaterialMore.forEach(function(link) {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const target = event.currentTarget;
+        const content = event.currentTarget.closest('.list-materials').querySelector('.list-materials__hidden-content');
+
+        event.currentTarget.classList.toggle('list-materials__more_active');
+        slideToggle(content, 500);
+        if ( target.classList.contains('list-materials__more_active') ) {
+          target.textContent = 'Скрыть';
+        } else {
+          target.textContent = 'Показать еще';
+        }
+      });
+    });
+  }
+
+  // change inputs size
+  const inputSize = document.querySelectorAll('.list-size__input');
+  if ( inputSize ) {
+    inputSize.forEach(function(input) {
+      input.addEventListener('change', (event) => {
+        const target = event.currentTarget;
+        const inputs = target.closest('.list-options__item').querySelectorAll('.list-size__input');
+
+        inputs.forEach((input) => {
+          if ( input.checked ) {
+            const name = input.closest('.list-options__item').querySelector('.list-options__name');
+            name.textContent = input.value;
+          }
+        });
+      });
+    });
+  }
+
+  // change inputs materials
+  const inputMaterials = document.querySelectorAll('.list-materials__input');
+  if ( inputMaterials ) {
+    inputMaterials.forEach(function(input) {
+      input.addEventListener('change', (event) => {
+        const target = event.currentTarget;
+        const inputs = target.closest('.list-options__item').querySelectorAll('.list-materials__input');
+
+        inputs.forEach((input) => {
+          if ( input.checked ) {
+            const name = input.closest('.list-options__item').querySelector('.list-options__name');
+            name.textContent = input.value;
+          }
+        });
+      });
+    });
+  }
+
+
 
 });

@@ -109,3 +109,83 @@
     opacity: 1;
   }
 }
+
+// Custom Select
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+.select-selected {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: 14px;
+  color: #9B9B9B;
+  max-width: 180px;
+  padding-right: 25px;
+  cursor: pointer;
+  transition: all 300ms ease;
+  &:hover {
+    color: $gold;
+  }
+}
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  right: 5px;
+  width: 0;
+  height: 0;
+  margin-top: -6px;
+  border: solid #9B9B9B;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 3.5px;
+  transform: rotate(45deg);
+  transition: all 300ms ease;
+}
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  transform: rotate(-135deg);
+  margin-top: 0;
+}
+/* style the items (options), including the selected item: */
+.select-items div {
+  padding: 10px 15px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 300ms ease;
+}
+/* Style items (options): */
+.select-items {
+  z-index: 99;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-width: 180px;
+  background-color: $white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+}
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+.select-items div {
+  &:hover {
+    background-color: lighten($gold, 10%);
+    color: $black;
+  }
+}
+.select-items .same-as-selected {
+  background-color: $gold;
+  color: $white;
+  pointer-events: none;
+}

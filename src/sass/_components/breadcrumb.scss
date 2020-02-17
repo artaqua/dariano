@@ -2,6 +2,10 @@
 @import '_modules/mixins';
 
 .breadcrumb {
+  &__body {
+    display: flex;
+    flex-direction: row;
+  }
   &__list {
     display: flex;
     flex-direction: row;
@@ -50,6 +54,19 @@
       background-color: transparent;
       transition: all 300ms ease;
       transform: translateX(-10px);
+    }
+  }
+  &__prev {
+    display: inline-flex;
+    margin-right: 15px;
+  }
+  &__icon {
+    width: 18px;
+    height: 18px;
+    fill: $black;
+    transition: all 300ms ease;
+    &:hover {
+      fill: $gold;
     }
   }
 }

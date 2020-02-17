@@ -1,0 +1,277 @@
+extends pug/base
+
+append vars
+  - var title = 'Card'
+
+block styles
+  link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:400,400i,700,700i&display=swap&subset=cyrillic" rel="stylesheet")
+  link(href=`assets/css/main.css` rel="stylesheet")
+
+block content
+  main
+    .layout__content
+      .page-collection
+        .container-fluid
+          .layout__wrapper
+            .card
+              .breadcrumb
+                .breadcrumb__body
+                  a.breadcrumb__prev(href="#")
+                    +svg('arrow-left', 'breadcrumb__icon')
+                  ul.breadcrumb__list
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="#") Главная
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="#") Каталог
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="#") Коллекция Luxury
+                    li.breadcrumb__item Августа
+              .card__row
+                .card__left-col
+                  img.card__img.lazy(data-src="assets/img/collection/img-1.png", alt="")
+                .card__right-col
+                  h3.card__product-name Августа
+                  .product-options
+                    .product-options__row
+                      .product-options__left-col
+                        ul.list-options
+
+                          li.list-options__item
+                            .list-options__head
+                              h5.list-options__title Размер
+                              a.list-options__link(href="#")
+                                span.list-options__name 2000 х 800
+                                +svg('arrow-down', 'list-options__icon-arrow')
+                            .list-options__body
+                              ul.list-size.list-options__list-size 
+                                .list-size__row
+                                  .list-size__field
+                                    input#size-1.list-size__input(type="radio" name="size" value="2000 х 800" checked)
+                                    label.list-size__label(for="size-1") 
+                                      span.list-size__box 
+                                      span.list-size__text 2000 х 800
+                                  .list-size__field
+                                    input#size-2.list-size__input(type="radio" name="size" value="1000 х 800")
+                                    label.list-size__label(for="size-2")
+                                      span.list-size__box 
+                                      span.list-size__text 1000 х 800
+
+                          li.list-options__item
+                            .list-options__head
+                              h5.list-options__title Покрытие
+                              a.list-options__link(href="#")
+                                span.list-options__name Дуб Мокко
+                                img.list-options__icon-img.lazy(data-src="assets/img/card/coating/img-1.jpg", alt="")
+                                +svg('arrow-down', 'list-options__icon-arrow')
+                            .list-options__body
+                              .custom-select.list-options__select
+                                select(name="coating")
+                                  option(value="0") Шпоночный
+                                  option(value="1") Эмаль
+                                  option(value="2") Ясень браш эмаль
+                              ul.list-materials.list-options__list-materials
+                                .list-materials__row
+                                  .list-materials__field
+                                    input#coating-1.list-materials__input(type="radio" name="materials" value="Дуб Мокко" checked)
+                                    label.list-materials__label.lazy(for="coating-1" data-bg="url(assets/img/card/coating/img-1.jpg)" title="Дуб Мокко 1")
+                                  .list-materials__field
+                                    input#coating-2.list-materials__input(type="radio" name="materials" value="Дуб Мокко 2")
+                                    label.list-materials__label.lazy(for="coating-2" data-bg="url(assets/img/card/coating/img-2.jpg)" title="Дуб Мокко 2")
+                                  .list-materials__field
+                                    input#coating-3.list-materials__input(type="radio" name="materials" value="Дуб Мокко 3")
+                                    label.list-materials__label.lazy(for="coating-3" data-bg="url(assets/img/card/coating/img-3.jpg)" title="Дуб Мокко 3")
+                                  .list-materials__field
+                                    input#coating-4.list-materials__input(type="radio" name="materials" value="Дуб Мокко 4")
+                                    label.list-materials__label.lazy(for="coating-4" data-bg="url(assets/img/card/coating/img-4.jpg)" title="Дуб Мокко 4")
+                                  .list-materials__field
+                                    input#coating-5.list-materials__input(type="radio" name="materials" value="Дуб Мокко 5")
+                                    label.list-materials__label.lazy(for="coating-5" data-bg="url(assets/img/card/coating/img-5.jpg)" title="Дуб Мокко 5")
+                                  .list-materials__field
+                                    input#coating-6.list-materials__input(type="radio" name="materials" value="Дуб Мокко 6")
+                                    label.list-materials__label.lazy(for="coating-6" data-bg="url(assets/img/card/coating/img-1.jpg)" title="Дуб Мокко 6")
+                                  .list-materials__field
+                                    input#coating-7.list-materials__input(type="radio" name="materials" value="Дуб Мокко 7")
+                                    label.list-materials__label.lazy(for="coating-7" data-bg="url(assets/img/card/coating/img-2.jpg)" title="Дуб Мокко 7")
+                                  .list-materials__field
+                                    input#coating-8.list-materials__input(type="radio" name="materials" value="Дуб Мокко 8")
+                                    label.list-materials__label.lazy(for="coating-8" data-bg="url(assets/img/card/coating/img-3.jpg)" title="Дуб Мокко 8")
+                                  .list-materials__field
+                                    input#coating-9.list-materials__input(type="radio" name="materials" value="Дуб Мокко 9")
+                                    label.list-materials__label.lazy(for="coating-9" data-bg="url(assets/img/card/coating/img-4.jpg)" title="Дуб Мокко 9")
+                                  .list-materials__field
+                                    input#coating-10.list-materials__input(type="radio" name="materials" value="Дуб Мокко 10")
+                                    label.list-materials__label.lazy(for="coating-10" data-bg="url(assets/img/card/coating/img-5.jpg)" title="Дуб Мокко 10")
+                                .list-materials__hidden-content
+                                  .list-materials__row
+                                    .list-materials__field
+                                      input#coating-1.list-materials__input(type="radio" name="materials" value="Дуб Мокко")
+                                      label.list-materials__label.lazy(for="coating-1" data-bg="url(assets/img/card/coating/img-1.jpg)" title="Дуб Мокко 1")
+                                    .list-materials__field
+                                      input#coating-2.list-materials__input(type="radio" name="materials" value="Дуб Мокко 2")
+                                      label.list-materials__label.lazy(for="coating-2" data-bg="url(assets/img/card/coating/img-2.jpg)" title="Дуб Мокко 2")
+                                    .list-materials__field
+                                      input#coating-3.list-materials__input(type="radio" name="materials" value="Дуб Мокко 3")
+                                      label.list-materials__label.lazy(for="coating-3" data-bg="url(assets/img/card/coating/img-3.jpg)" title="Дуб Мокко 3")
+                                    .list-materials__field
+                                      input#coating-4.list-materials__input(type="radio" name="materials" value="Дуб Мокко 4")
+                                      label.list-materials__label.lazy(for="coating-4" data-bg="url(assets/img/card/coating/img-4.jpg)" title="Дуб Мокко 4")
+                                    .list-materials__field
+                                      input#coating-5.list-materials__input(type="radio" name="materials" value="Дуб Мокко 5")
+                                      label.list-materials__label.lazy(for="coating-5" data-bg="url(assets/img/card/coating/img-5.jpg)" title="Дуб Мокко 5")
+                                    .list-materials__field
+                                      input#coating-6.list-materials__input(type="radio" name="materials" value="Дуб Мокко 6")
+                                      label.list-materials__label.lazy(for="coating-6" data-bg="url(assets/img/card/coating/img-1.jpg)" title="Дуб Мокко 6")
+                                    .list-materials__field
+                                      input#coating-7.list-materials__input(type="radio" name="materials" value="Дуб Мокко 7")
+                                      label.list-materials__label.lazy(for="coating-7" data-bg="url(assets/img/card/coating/img-2.jpg)" title="Дуб Мокко 7")
+                                    .list-materials__field
+                                      input#coating-8.list-materials__input(type="radio" name="materials" value="Дуб Мокко 8")
+                                      label.list-materials__label.lazy(for="coating-8" data-bg="url(assets/img/card/coating/img-3.jpg)" title="Дуб Мокко 8")
+                                    .list-materials__field
+                                      input#coating-9.list-materials__input(type="radio" name="materials" value="Дуб Мокко 9")
+                                      label.list-materials__label.lazy(for="coating-9" data-bg="url(assets/img/card/coating/img-4.jpg)" title="Дуб Мокко 9")
+                                    .list-materials__field
+                                      input#coating-10.list-materials__input(type="radio" name="materials" value="Дуб Мокко 10")
+                                      label.list-materials__label.lazy(for="coating-10" data-bg="url(assets/img/card/coating/img-5.jpg)" title="Дуб Мокко 10")
+                                a.list-materials__more(href="#") Показать еще
+
+
+                          li.list-options__item
+                            .list-options__head
+                              h5.list-options__title Стекло
+                              a.list-options__link(href="#")
+                                span.list-options__name Графировка с фацетом Агат
+                                img.list-options__icon-img.lazy(data-src="assets/img/card/glass/img-1.jpg", alt="")
+                                +svg('arrow-down', 'list-options__icon-arrow')
+                            .list-options__body
+                              ul.list-materials.list-options__list-materials
+                                .list-materials__row
+                                  .list-materials__field
+                                    input#glass-1.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат" checked)
+                                    label.list-materials__label.lazy(for="glass-1" data-bg="url(assets/img/card/coating/img-1.jpg)" title="Графировка с фацетом Агат")
+                                  .list-materials__field
+                                    input#glass-2.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 2")
+                                    label.list-materials__label.lazy(for="glass-2" data-bg="url(assets/img/card/coating/img-2.jpg)" title="Графировка с фацетом Агат 2")
+                                  .list-materials__field
+                                    input#glass-3.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 3")
+                                    label.list-materials__label.lazy(for="glass-3" data-bg="url(assets/img/card/coating/img-3.jpg)" title="Графировка с фацетом Агат 3")
+                                  .list-materials__field
+                                    input#glass-4.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 4")
+                                    label.list-materials__label.lazy(for="glass-4" data-bg="url(assets/img/card/coating/img-4.jpg)" title="Графировка с фацетом Агат 4")
+                                  .list-materials__field
+                                    input#glass-5.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 5")
+                                    label.list-materials__label.lazy(for="glass-5" data-bg="url(assets/img/card/coating/img-5.jpg)" title="Графировка с фацетом Агат 5")
+                                  .list-materials__field
+                                    input#glass-6.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 6")
+                                    label.list-materials__label.lazy(for="glass-6" data-bg="url(assets/img/card/coating/img-1.jpg)" title="Графировка с фацетом Агат 6")
+                                  .list-materials__field
+                                    input#glass-7.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 7")
+                                    label.list-materials__label.lazy(for="glass-7" data-bg="url(assets/img/card/coating/img-2.jpg)" title="Графировка с фацетом Агат 7")
+                                  .list-materials__field
+                                    input#glass-8.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 8")
+                                    label.list-materials__label.lazy(for="glass-8" data-bg="url(assets/img/card/coating/img-3.jpg)" title="Графировка с фацетом Агат 8")
+                                  .list-materials__field
+                                    input#glass-9.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 9")
+                                    label.list-materials__label.lazy(for="glass-9" data-bg="url(assets/img/card/coating/img-4.jpg)" title="Графировка с фацетом Агат 9")
+                                  .list-materials__field
+                                    input#glass-10.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 10")
+                                    label.list-materials__label.lazy(for="glass-10" data-bg="url(assets/img/card/coating/img-5.jpg)" title="Графировка с фацетом Агат 10")
+                                .list-materials__hidden-content
+                                  .list-materials__row
+                                    .list-materials__field
+                                      input#glass-1.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат")
+                                      label.list-materials__label.lazy(for="glass-1" data-bg="url(assets/img/card/coating/img-1.jpg)" title="Графировка с фацетом Агат")
+                                    .list-materials__field
+                                      input#glass-2.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 2")
+                                      label.list-materials__label.lazy(for="glass-2" data-bg="url(assets/img/card/coating/img-2.jpg)" title="Графировка с фацетом Агат 2")
+                                    .list-materials__field
+                                      input#glass-3.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 3")
+                                      label.list-materials__label.lazy(for="glass-3" data-bg="url(assets/img/card/coating/img-3.jpg)" title="Графировка с фацетом Агат 3")
+                                    .list-materials__field
+                                      input#glass-4.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 4")
+                                      label.list-materials__label.lazy(for="glass-4" data-bg="url(assets/img/card/coating/img-4.jpg)" title="Графировка с фацетом Агат 4")
+                                    .list-materials__field
+                                      input#glass-5.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 5")
+                                      label.list-materials__label.lazy(for="glass-5" data-bg="url(assets/img/card/coating/img-5.jpg)" title="Графировка с фацетом Агат 5")
+                                    .list-materials__field
+                                      input#glass-6.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 6")
+                                      label.list-materials__label.lazy(for="glass-6" data-bg="url(assets/img/card/coating/img-1.jpg)" title="Графировка с фацетом Агат 6")
+                                    .list-materials__field
+                                      input#glass-7.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 7")
+                                      label.list-materials__label.lazy(for="glass-7" data-bg="url(assets/img/card/coating/img-2.jpg)" title="Графировка с фацетом Агат 7")
+                                    .list-materials__field
+                                      input#glass-8.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 8")
+                                      label.list-materials__label.lazy(for="glass-8" data-bg="url(assets/img/card/coating/img-3.jpg)" title="Графировка с фацетом Агат 8")
+                                    .list-materials__field
+                                      input#glass-9.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 9")
+                                      label.list-materials__label.lazy(for="glass-9" data-bg="url(assets/img/card/coating/img-4.jpg)" title="Графировка с фацетом Агат 9")
+                                    .list-materials__field
+                                      input#glass-10.list-materials__input(type="radio" name="glass" value="Графировка с фацетом Агат 10")
+                                      label.list-materials__label.lazy(for="glass-10" data-bg="url(assets/img/card/coating/img-5.jpg)" title="Графировка с фацетом Агат 10")
+                                a.list-materials__more(href="#") Показать еще
+
+                          li.list-options__item
+                            .list-options__head
+                              h5.list-options__title Обрамление
+                              a.list-options__link(href="#")
+                                span.list-options__name Наличник плоский
+                                img.list-options__icon-img.lazy(data-src="assets/img/card/framing/img-1.jpg", alt="")
+                                +svg('arrow-down', 'list-options__icon-arrow')
+                            .list-options__body
+                              ul.list-materials.list-options__list-materials
+                                .list-materials__row
+                                  .list-materials__field
+                                    input#framing-1.list-materials__input(type="radio" name="framing" value="Наличник плоский" checked)
+                                    label.list-materials__label.lazy(for="framing-1" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Наличник плоский 1")
+                                  .list-materials__field
+                                    input#framing-2.list-materials__input(type="radio" name="framing" value="Наличник плоский 2")
+                                    label.list-materials__label.lazy(for="framing-2" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Наличник плоский 2")
+                                  .list-materials__field
+                                    input#framing-3.list-materials__input(type="radio" name="framing" value="Наличник плоский 3")
+                                    label.list-materials__label.lazy(for="framing-3" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Наличник плоский 3")
+                                  .list-materials__field
+                                    input#framing-4.list-materials__input(type="radio" name="framing" value="Наличник плоский 4")
+                                    label.list-materials__label.lazy(for="framing-4" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Наличник плоский 4")
+                                  .list-materials__field
+                                    input#framing-5.list-materials__input(type="radio" name="framing" value="Наличник плоский 5")
+                                    label.list-materials__label.lazy(for="framing-5" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Наличник плоский 5")
+
+                          li.list-options__item
+                            .list-options__head
+                              h5.list-options__title Декор
+                              a.list-options__link(href="#")
+                                span.list-options__name Молдинг Хром 1
+                                img.list-options__icon-img.lazy(data-src="assets/img/card/framing/img-1.jpg", alt="")
+                                +svg('arrow-down', 'list-options__icon-arrow')
+                            .list-options__body
+                              ul.list-materials.list-options__list-materials
+                                .list-materials__row
+                                  .list-materials__field
+                                    input#decor-1.list-materials__input(type="radio" name="decor" value="Молдинг Хром 1" checked)
+                                    label.list-materials__label.lazy(for="decor-1" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Молдинг Хром 1")
+                                  .list-materials__field
+                                    input#decor-2.list-materials__input(type="radio" name="decor" value="Молдинг Хром 2")
+                                    label.list-materials__label.lazy(for="decor-2" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Молдинг Хром 2")
+                                  .list-materials__field
+                                    input#decor-3.list-materials__input(type="radio" name="decor" value="Молдинг Хром 3")
+                                    label.list-materials__label.lazy(for="decor-3" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Молдинг Хром 3")
+                                  .list-materials__field
+                                    input#decor-4.list-materials__input(type="radio" name="decor" value="Молдинг Хром 4")
+                                    label.list-materials__label.lazy(for="decor-4" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Молдинг Хром 4")
+                                  .list-materials__field
+                                    input#decor-5.list-materials__input(type="radio" name="decor" value="Молдинг Хром 5")
+                                    label.list-materials__label.lazy(for="decor-5" data-bg="url(assets/img/card/framing/img-1.jpg)" title="Молдинг Хром 5")
+
+                          li.list-options__item
+                            .list-options__head
+                              h5.list-options__title Фурнитура
+                              a.list-options__link(href="#")
+                                span.list-options__name Ручка Махаон светлая
+                                +svg('arrow-down', 'list-options__icon-arrow')
+                            .list-options__body
+                              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt alias expedita ducimus neque cum debitis labore corporis sed dicta molestiae architecto commodi quam nulla non saepe a distinctio magni, cumque.
+
+                      .product-options__right-col
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit blanditiis magni consequuntur tempore veniam non aspernatur voluptatum, sint doloremque provident repellat eos odit, soluta molestiae sed dolorem autem mollitia nihil!
+        
+
