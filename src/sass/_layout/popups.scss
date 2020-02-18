@@ -8,7 +8,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.4);
   transition: all 600ms ease;
   opacity: 0;
   visibility: hidden;
@@ -20,8 +20,8 @@
   @include below(900px) {
     padding: 20px;
   }
-  @include below(400px) {
-    padding: 0;
+  @include below(500px) {
+    padding: 15px;
   }
   &_active {
     opacity: 1;
@@ -34,258 +34,91 @@
     right: 15px;
   }
   &__close-icon {
-    width: 18px;
-    height: 18px;
-    fill: $black;
+    width: 14px;
+    height: 14px;
+    fill: #C4C4C4;
     transition: all 300ms ease;
     &:hover {
-      fill: $yellow;
+      fill: $gold;
     }
   }
   &__container {
     position: relative;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 366px;
     width: 100%;
     background: $white;
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    padding: 45px;
     @include below(500px) {
-      padding: 40px 30px 30px 30px;
-    }
-    @include below(400px) {
-      padding: 40px 20px 20px 20px;
+      padding: 35px;
     }
   }
   &__head-title {
     display: block;
-    font-size: 28px;
-    font-weight: normal;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center;
     margin-top: 0;
     margin-bottom: 0;
-    @include below(1100px) {
-      font-size: 24px;
-    }
-    @include below(900px) {
-      font-size: 20px;
-    }
     @include below(500px) {
-      font-size: 18px;
+      font-size: 16px;
+      text-align: left;
+      margin-top: 10px;
+    }
+    &_center {
+      text-align: center;
     }
   }
   &__descr {
     font-size: 14px;
-    line-height: 16px;
+    text-align: center;
     margin-top: 10px;
     margin-bottom: 0;
     @include below(500px) {
       font-size: 12px;
+      text-align: left;
+    }
+    &_center {
+      text-align: center;
     }
   }
-  &__feedback {
-    margin-top: 20px;
-  }
 }
-.list-popular-city {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  margin-bottom: 5px;
-  &__popular {
-    display: inline;
+.form-request {
+  &__title {
+    font-family: $font-1;
     font-size: 14px;
-    font-family: $font-2;
-    margin: 0;
-    line-height: 20px;
-    margin-right: 5px;
-  }
-  .list-city__field {
-    margin-right: 5px;
-    line-height: 18px;
-    font-weight: 700;
-  }
-}
-.list-letter {
-  &__letter {
-    font-family: $font-2;
-    font-weight: 700;
-    font-size: 16px;
-    text-transform: uppercase;
-    margin-left: 20px;
-    margin-bottom: 8px;
-  }
-  &__row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 -10px;;
-  }
-  &__col {
-    padding: 0 10px;
-    width: 16.6%;
-    @include below(1100px) {
-      width: 20%;
-    }
-    @include below(900px) {
-      width: 25%;
-    }
-    @include below(700px) {
-      width: 33.3%;
-    }
-    @include below(600px) {
-      width: 50%;
-    }
-    @include below(400px) {
-      width: 100%;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    @include below(500px) {
+      margin-top: 20px;
     }
   }
-  &__item {
-    margin-top: 20px;
-  }
-}
-.list-city {
-  &__item {
-    margin: 4px 0;
-  }
-  &__input {
-    display: none;
-  }
-  &__label {
-    display: inline;
-    font-family: $font-2;
-    font-size: 14px;
-    color: $black;
-    border-bottom: 2px solid transparent;
-    cursor: pointer;
-    transition: all 300ms ease;
-    &:hover {
-      border-color: $yellow;
-    }
-  }
-}
-.list-city__input:checked + .list-city__label {
-  border-color: $yellow;
-}
-
-.feedback {
-  &__rates {
-    border: 1px solid #e1e1e1;
-  }
-  &__row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 -10px;
-    @include below(1200px) {
-      margin: 0 -5px;
-    }
-    @include below(900px) {
-      padding: 10px;
-    }
-  }
-  &__col {
-    flex-basis: 20%;
-    max-width: 20%;
-    flex-shrink: 0;
-    flex-grow: 0;
-    padding: 15px 20px;
-    @include below(900px) {
-      flex-basis: 33.3%;
-      max-width: 33.3%;
-      padding: 0 10px;
-    }
-    @include below(600px) {
-      flex-basis: 50%;
-      max-width: 50%;
-    }
-    @include below(450px) {
-      flex-basis: 100%;
-      max-width: 100%;
-    }
-  }
-  &__message {
+  &__field {
     width: 100%;
-    height: 114px;
-    border: none;
-    padding: 15px 20px;
-    border: 1px solid #e1e1e1;
-    color: $black;
-    margin-top: 10px;
+    height: 58px;
+    background: $white;
+    border: 1px solid #E7E7E7;
+    padding: 0 20px;
   }
   &__btn {
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 20%;
-    height: 44px;
-    background-color: $yellow;
-    font-family: $font-1;
-    font-size: 16px;
-    text-align: center;
-    color: #434e65;
-    padding: 0 25px;
+    width: 100%;
+    height: 65px;
     border-radius: 0;
-    margin-top: 15px;
-    @include below(1100px) {
-      font-size: 14px;
-    }
-    @include below(900px) {
-      width: 33.3%;
-    }
-    @include below(600px) {
-      width: 50%;
-    }
-    @include below(450px) {
-      width: 100%;
-    }
-    &:hover {
-      color: $black;
-      background-color: lighten($yellow,12%);
-    }
-  }
-}
-.pick-rate {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &__descr {
-    display: block;
-    text-align: center;
+    border: none;
     font-size: 12px;
-    line-height: 14px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    @include below(900px) {
-      margin-bottom: 15px;
-    }
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: $black;
+    background: linear-gradient(234.93deg, #F4E7CE -27.49%, #D6C29D 82.97%);
+    margin-top: 30px;
   }
-  &__inner {
-    float: left;
-  }
-  &__input {
-    display: none;
-  }
-  &__label {
-    float: right;
-    overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    font-size: 24px;
-    color: #d1d1d1;
-    transition: all 300ms ease;
-    user-select: none;
-    &_checked {
-      color: $yellow;
-    }
-  }
-}
-.pick-rate__inner > .pick-rate__input:checked ~ .pick-rate__label {
-  color: $yellow;   
-}
-.pick-rate__inner > .pick-rate__label:hover,
-.pick-rate__inner > .pick-rate__label:hover ~ .pick-rate__label {
-  color: $yellow; 
 }

@@ -22,14 +22,17 @@
     font-size: 14px;
     color: #C4C4C4;
     margin-right: 8px;
-    &:before {
+    @include sm {
+      font-size: 13px;
+    }
+    &:after {
       content: '/';
       display: block;
       color: #C4C4C4;
-      margin-right: 8px;
+      margin-left: 8px;
     }
-    &:first-child {
-      &:before {
+    &:last-child {
+      &:after {
         display: none;
       }
     }
@@ -39,6 +42,9 @@
     color: #C4C4C4;
     font-family: $font-1;
     font-size: 14px;
+    @include sm {
+      font-size: 13px;
+    }
     &:hover {
       color: $gold;
       &:after {
@@ -59,12 +65,19 @@
   &__prev {
     display: inline-flex;
     margin-right: 15px;
+    @include sm {
+      margin-top: 2px;
+    }
   }
   &__icon {
     width: 18px;
     height: 18px;
     fill: $black;
     transition: all 300ms ease;
+    @include sm {
+      width: 14px;
+      height: 14px;
+    }
     &:hover {
       fill: $gold;
     }

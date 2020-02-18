@@ -1,55 +1,225 @@
 @import '_modules/variables';
 @import '_modules/mixins';
 
+.gallery-thumbs {
+  width: 100%;
+  height: 232px !important;
+  @include md {
+    height: 150px !important;
+  }
+  .swiper-slide-thumb-active .card__img-preview {
+    border-color: #00523B;
+  }
+}
 .card {
   width: 100%;
   &__row {
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 50px;
+    @include below(600px) {
+      margin-top: 15px;
+    }
   }
   &__left-col {
+    position: relative;
     flex: 0 0 33.3%;
     max-width: 33.3%;
+    @include sm {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    @include below(600px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
   &__right-col {
     flex: 0 0 66.6%;
     max-width: 66.6%;
+    @include sm {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    @include below(600px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-top: 20px;
+    }
   }
   &__product-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
-    display: block;
     padding-bottom: 30px;
     border-bottom: 1px solid #EBEBEB;
     font-family: $font-1;
     font-size: 24px;
     font-weight: 600;
     margin: 0;
+    @include sm {
+      flex-wrap: wrap;
+    }
+  }
+  &__gallery {
+    z-index: 1;
+    position: relative;
+  }
+  &__gallery-thumbs {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__slider-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: $white;
+    @include below(600px) {
+      width: auto;
+      padding: 0 50px;
+    }
   }
   &__img {
-    flex: 0;
     display: block;
-    margin: 0 auto;
+  }
+  &__img-preview {
+    width: 65px;
+    height: 65px;
+    display: block;
+    background: $white;
+    object-fit: contain;
+    object-position: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: all 600ms ease;
+    @include md {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  &__description-box {
+    margin-top: 60px;
+    @include below(600px) {
+      margin-top: 40px;
+    }
+  }
+  &__similar {
+    margin-top: 50px;
+  }
+  &__breadcrumb {
+    @include sm {
+      margin-top: 30px;
+    }
+  }
+}
+.shares {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include sm {
+    // order: -1;
+    width: 100%;
+    margin-top: 20px;
+  }
+  &__name {
+    font-size: 14px;
+    font-weight: 600;
+    color: $white;
+    background: #00523B;
+    padding: 6px 10px;
+    margin-left: 20px;
+    @include sm {
+      margin-left: 0;
+    }
+  }
+  &__link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #00523B;
+    margin-left: 20px;
+    border-bottom: 1px dashed #00523B;
+    @include sm {
+      font-size: 12px;
+    }
+    &:hover {
+      color: $gold;
+      border-color: $gold;
+    }
   }
 }
 .product-options {
   &__row {
-    width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 50px;
-    margin: 0 -15px;
+    margin: 0 -18px;
   }
   &__left-col {
     flex: 0 0 60%;
     max-width: 60%;
-    padding: 0 15px;
+    padding: 0 18px;
+    @include sm {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
   }
   &__right-col {
     flex: 0 0 40%;
     max-width: 40%;
-    padding: 0 15px;
+    padding: 0 18px;
+    @include sm {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  &__list-type-product {
+    margin-top: 20px;
+    @include sm {
+      margin-top: 15px;
+    }
+  }
+  &__list-opening-systems {
+    margin-top: 30px;
+    @include sm {
+      margin-top: 20px;
+    }
+  }
+  &__btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $black;
+    letter-spacing: 0.2em;
+    border-radius: 0;
+    background: linear-gradient(238.66deg, #F4E7CE -27.49%, #D6C29D 82.97%), #00523B;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+    transition: all 300ms ease;
+    @include md {
+      letter-spacing: 0.1em;
+    }
+    @include sm {
+      letter-spacing: 0.2em;
+    }
+    &:hover {
+      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.15);
+    }
   }
 }
 .list-options {
@@ -60,6 +230,9 @@
     flex-direction: column;
     padding: 20px 0;
     border-bottom: 1px solid #EBEBEB;
+    @include sm {
+      padding: 15px 0;
+    }
   }
   &__head {
     display: flex;
@@ -80,11 +253,13 @@
     flex-direction: row;
     align-items: center;
     &:hover {
-      .list-options__name {
-        color: $gold;
-      }
       .list-options__icon-arrow {
         fill: $gold;
+      }
+    }
+    &_active {
+      .list-options__icon-arrow {
+        transform: rotate(-180deg);
       }
     }
   }
@@ -94,6 +269,9 @@
     color: #00523B;
     margin-right: 10px;
     transition: all 300ms ease;
+    @include md {
+      font-size: 12px;
+    }
   }
   &__icon-img {
     display: block;
@@ -118,9 +296,21 @@
   }
   &__list-materials {
     margin-top: 20px;
+    @include sm{
+      margin-top: 15px;
+    }
   }
   &__list-size {
     margin-top: 20px;
+    @include sm{
+      margin-top: 15px;
+    }
+  }
+  &__list-hardware {
+    margin-top: 20px;
+    @include sm{
+      margin-top: 15px;
+    }
   }
 }
 
@@ -175,6 +365,162 @@
     flex-wrap: wrap;
   }
   &__field {
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+  &__input {
+    display: none;
+  }
+  &__label {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 300ms ease;
+    &:hover {
+      // border-color: $yellow;
+    }
+  }
+  &__box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: $white;
+    box-shadow: inset 0px 0px 0px 2px #EBEBEB, inset 0px 0px 0px 5px $white;
+    margin-right: 10px;
+    transition: all 300ms ease;
+  }
+  &__text {
+    padding-left: 25px;
+  }
+}
+.list-size__input:checked + .list-size__label .list-size__box {
+  background: $gold;
+  box-shadow: inset 0px 0px 0px 2px $gold, inset 0px 0px 0px 5px $white;
+}
+
+.list-hardware {
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 2px;
+  }
+  &__field {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  &__input {
+    display: none;
+  }
+  &__label {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 16px;
+    transition: all 300ms ease;
+    background: $white;
+    box-shadow: 0px 0px 0px 2px #EBEBEB;
+  }
+  &__img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+.list-hardware__input:checked + .list-hardware__label {
+  box-shadow: 0px 0px 0px 2px $gold;
+}
+
+.list-type-product {
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+  &__row {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include sm {
+      margin-top: 15px;
+    }
+  }
+  &__input {
+    display: none;
+  }
+  &__label {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  &__box {
+    position: relative;
+    overflow: hidden;
+    width: 104px;
+    height: 104px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 0px 0px 1px #EBEBEB;
+    transition: all 300ms ease;
+    @include md {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  &__img {
+    @include md {
+      width: 30px;
+    }
+  }
+  &__name {
+    display: block;
+    color: #9B9B9B;
+    text-align: center;
+    margin-top: 10px;
+    transition: all 300ms ease;
+    @include md {
+      font-size: 13px;
+    }
+  }
+}
+.list-type-product__input:checked + .list-type-product__label .list-type-product__box {
+  box-shadow: inset 0px 0px 0px 1px $gold;
+}
+.list-type-product__input:checked + .list-type-product__label .list-type-product__name {
+  color: $black;
+}
+
+.list-opening-systems {
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+  }
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  &__field {
     margin-right: 15px;
     margin-bottom: 15px;
   }
@@ -185,7 +531,6 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center;
     font-size: 13px;
     cursor: pointer;
     user-select: none;
@@ -195,18 +540,23 @@
     }
   }
   &__box {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     width: 17px;
     height: 17px;
     border-radius: 50%;
     background: $white;
-    box-shadow: inset 0px 0px 0px 2px #ccc, inset 0px 0px 0px 5px $white;
+    box-shadow: inset 0px 0px 0px 2px #EBEBEB, inset 0px 0px 0px 5px $white;
     margin-right: 10px;
     transition: all 300ms ease;
   }
+  &__text {
+    padding-left: 27px;
+  }
 }
-.list-size__input:checked + .list-size__label .list-size__box {
+.list-opening-systems__input:checked + .list-opening-systems__label .list-opening-systems__box {
   background: $gold;
   box-shadow: inset 0px 0px 0px 2px $gold, inset 0px 0px 0px 5px $white;
 }

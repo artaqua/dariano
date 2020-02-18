@@ -71,6 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       document.querySelector('.btn-menu').classList.remove('btn-menu_active');
       document.querySelector('.sidebar-menu').classList.remove('sidebar-menu_active');
+      const popups = document.querySelectorAll('.popup');
+      popups.forEach((popup) => {
+        popup.classList.remove('popup_active');
+      });
       toggleScroll('show');
     }
   }, false);
@@ -102,46 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, false);
   }
-
-  // // Tabs
-  // (function () {
-  //   const tabs = document.querySelectorAll('.tab');
-  //   if (tabs) {
-  //     tabs.forEach(tab => {
-  //       const dataTab = tab.querySelector('.tab__link_active').getAttribute('data-tab');
-  //       const contentItems = tab.querySelectorAll('.tab__content-item');
-  //       const tabLinks = tab.querySelectorAll('.tab__link');
-  //       const dataTitle = tab.querySelector('.tab__link_active').getAttribute('data-title');
-
-  //       // Init
-  //       contentItems.forEach(block => {
-  //         block.classList.remove('tab__content-item_active');
-  //       }, false);
-  //       tab.querySelector(dataTab).classList.add('tab__content-item_active');
-
-  //       // Change tab
-  //       tabLinks.forEach(link => {
-  //         link.addEventListener('click', (event) => {
-  //           event.preventDefault();
-  //           const clickedLink = event.currentTarget;
-  //           const clickedLinkData = clickedLink.getAttribute('data-tab');
-  //           const clickedLinkDataTitle = clickedLink.getAttribute('data-title');
-
-  //           tabLinks.forEach(link => {
-  //             link.classList.remove('tab__link_active');
-  //           }, false);
-  //           clickedLink.classList.add('tab__link_active');
-
-  //           contentItems.forEach(item => {
-  //             item.classList.remove('tab__content-item_active');
-  //           }, false);
-  //           tab.querySelector(clickedLinkData).classList.add('tab__content-item_active');
-
-  //         }, false);
-  //       }, false);
-  //     }, false);
-  //   }
-  // })();
 
   // Animations
   (function () {
@@ -217,7 +181,8 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
         const body = event.currentTarget.closest('.list-options__item').querySelector('.list-options__body');
-        slideToggle(body, 500);
+        event.currentTarget.classList.toggle('list-options__link_active');
+        slideToggle(body, 400);
       });
     });
   }
@@ -271,6 +236,28 @@ document.addEventListener("DOMContentLoaded", () => {
         inputs.forEach((input) => {
           if ( input.checked ) {
             const name = input.closest('.list-options__item').querySelector('.list-options__name');
+            const labelBg = input.nextElementSibling.getAttribute('data-bg').slice(4,-1);
+            const img = input.closest('.list-options__item').querySelector('.list-options__icon-img');
+
+            name.textContent = input.value;
+            img.src = labelBg;
+          }
+        });
+      });
+    });
+  }
+
+  // change inputs hardware
+  const inputHardware = document.querySelectorAll('.list-hardware__input');
+  if ( inputHardware ) {
+    inputHardware.forEach(function(input) {
+      input.addEventListener('change', (event) => {
+        const target = event.currentTarget;
+        const inputs = target.closest('.list-options__item').querySelectorAll('.list-hardware__input');
+
+        inputs.forEach((input) => {
+          if ( input.checked ) {
+            const name = input.closest('.list-options__item').querySelector('.list-options__name');
             name.textContent = input.value;
           }
         });
@@ -278,6 +265,111 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Tabs
+  (function () {
+    const tabs = document.querySelectorAll('.tab');
+    if (tabs) {
+      tabs.forEach(tab => {
+        const dataTab = tab.querySelector('.tab__link_active').getAttribute('data-tab');
+        const contentItems = tab.querySelectorAll('.tab__content-item');
+        const tabLinks = tab.querySelectorAll('.tab__link');
+        const dataTitle = tab.querySelector('.tab__link_active').getAttribute('data-title');
 
+        // Init
+        contentItems.forEach(block => {
+          block.classList.remove('tab__content-item_active');
+        }, false);
+        tab.querySelector(dataTab).classList.add('tab__content-item_active');
+
+        // Change tab
+        tabLinks.forEach(link => {
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const clickedLink = event.currentTarget;
+            const clickedLinkData = clickedLink.getAttribute('data-tab');
+            const clickedLinkDataTitle = clickedLink.getAttribute('data-title');
+
+            tabLinks.forEach(link => {
+              link.classList.remove('tab__link_active');
+            }, false);
+            clickedLink.classList.add('tab__link_active');
+
+            contentItems.forEach(item => {
+              item.classList.remove('tab__content-item_active');
+            }, false);
+            tab.querySelector(clickedLinkData).classList.add('tab__content-item_active');
+
+          }, false);
+        }, false);
+      }, false);
+    }
+  })();
+
+  // Slider card gallery
+  const galleryThumbs = new Swiper('.gallery-thumbs', {
+    loop: true,
+    centeredSlides: true,
+    spaceBetween: 0,
+    slidesPerView: 3,
+    direction: 'vertical',
+    slideToClickedSlide: true,
+  });
+  const galleryTop = new Swiper('.gallery-top', {
+    effect: 'fade',
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    initialSlide: 0,
+    slideToClickedSlide: true,
+    autoHeight: true,
+    thumbs: {
+      swiper: galleryThumbs,
+    }
+  });
+  galleryThumbs.update();
+  galleryTop.update();
+
+  // Вызов заявки
+  const btnRequest = document.querySelectorAll('.product-options__btn');
+  if ( btnRequest ) {
+    btnRequest.forEach(function(link) {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const popupRequest = document.querySelector('.popup_request');
+
+        toggleScroll('hide');
+        popupRequest.classList.add('popup_active');
+      });
+    });
+  }
+  // Вызов заявка успешно отправлена
+  const btnRequestSend = document.querySelectorAll('.form-request__btn');
+  if ( btnRequestSend ) {
+    btnRequestSend.forEach(function(link) {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const popup = event.currentTarget.closest('.popup');
+        const popupDone = document.querySelector('.popup_done');
+
+        popup.classList.remove('popup_active');
+        toggleScroll('hide');
+        popupDone.classList.add('popup_active');
+      });
+    });
+  }
+  // Закрытие попапа
+  const popupBtnClose = document.querySelectorAll('.popup__close');
+  if ( popupBtnClose ) {
+    popupBtnClose.forEach(btn => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const popup = event.currentTarget.closest('.popup');
+        
+        toggleScroll('show');
+        popup.classList.remove('popup_active');
+      });
+    });
+  }
+  
 
 });

@@ -1,84 +1,22 @@
 .popups(style="display: none;")
-  .popup.popup_comment
+  .popup.popup_request
     .popup__container
       a.popup__close(href="#")
         +svg('cross', 'popup__close-icon')
-      h4.popup__head-title Оставить отзыв для компании: 
-        b "Money Man"
-      p.popup__descr Оцените компанию и напишите отзыв для нее в форме ниже.
-      form.feedback.popup__feedback
-        .feedback__rates
-          .feedback__row
-            .feedback__col
-              .pick-rate
-                .pick-rate__inner
-                  input.pick-rate__input(type="radio" id="approval-speed-loan-5" name="approval-speed-loan" value="5")
-                  label.pick-rate__label(for="approval-speed-loan-5") ★
-                  input.pick-rate__input(type="radio" id="approval-speed-loan-4" name="approval-speed-loan" value="4" checked)
-                  label.pick-rate__label(for="approval-speed-loan-4") ★
-                  input.pick-rate__input(type="radio" id="approval-speed-loan-3" name="approval-speed-loan" value="3")
-                  label.pick-rate__label(for="approval-speed-loan-3") ★
-                  input.pick-rate__input(type="radio" id="approval-speed-loan-2" name="approval-speed-loan" value="2")
-                  label.pick-rate__label(for="approval-speed-loan-2") ★
-                  input.pick-rate__input(type="radio" id="approval-speed-loan-1" name="approval-speed-loan" value="1")
-                  label.pick-rate__label(for="approval-speed-loan-1") ★
-                p.pick-rate__descr Скорость одобрения займа
-            .feedback__col
-              .pick-rate
-                .pick-rate__inner
-                  input.pick-rate__input(type="radio" id="amount-docs-5" name="amount-docs" value="5")
-                  label.pick-rate__label(for="amount-docs-5") ★
-                  input.pick-rate__input(type="radio" id="amount-docs-4" name="amount-docs" value="4" checked)
-                  label.pick-rate__label(for="amount-docs-4") ★
-                  input.pick-rate__input(type="radio" id="amount-docs-3" name="amount-docs" value="3")
-                  label.pick-rate__label(for="amount-docs-3") ★
-                  input.pick-rate__input(type="radio" id="amount-docs-2" name="amount-docs" value="2")
-                  label.pick-rate__label(for="amount-docs-2") ★
-                  input.pick-rate__input(type="radio" id="amount-docs-1" name="amount-docs" value="1")
-                  label.pick-rate__label(for="amount-docs-1") ★
-                p.pick-rate__descr Количество документов
-            .feedback__col
-              .pick-rate
-                .pick-rate__inner
-                  input.pick-rate__input(type="radio" id="support-5" name="support" value="5")
-                  label.pick-rate__label(for="support-5") ★
-                  input.pick-rate__input(type="radio" id="support-4" name="support" value="4" checked)
-                  label.pick-rate__label(for="support-4") ★
-                  input.pick-rate__input(type="radio" id="support-3" name="support" value="3")
-                  label.pick-rate__label(for="support-3") ★
-                  input.pick-rate__input(type="radio" id="support-2" name="support" value="2")
-                  label.pick-rate__label(for="support-2") ★
-                  input.pick-rate__input(type="radio" id="support-1" name="support" value="1")
-                  label.pick-rate__label(for="support-1") ★
-                p.pick-rate__descr Служба поддержки
-            .feedback__col
-              .pick-rate
-                .pick-rate__inner
-                  input.pick-rate__input(type="radio" id="delivery-speed-loan-5" name="delivery-speed-loan" value="5")
-                  label.pick-rate__label(for="delivery-speed-loan-5") ★
-                  input.pick-rate__input(type="radio" id="delivery-speed-loan-4" name="delivery-speed-loan" value="4" checked)
-                  label.pick-rate__label(for="delivery-speed-loan-4") ★
-                  input.pick-rate__input(type="radio" id="delivery-speed-loan-3" name="delivery-speed-loan" value="3")
-                  label.pick-rate__label(for="delivery-speed-loan-3") ★
-                  input.pick-rate__input(type="radio" id="delivery-speed-loan-2" name="delivery-speed-loan" value="2")
-                  label.pick-rate__label(for="delivery-speed-loan-2") ★
-                  input.pick-rate__input(type="radio" id="delivery-speed-loan-1" name="delivery-speed-loan" value="1")
-                  label.pick-rate__label(for="delivery-speed-loan-1") ★
-                p.pick-rate__descr Скорость выдачи займа
-            .feedback__col
-              .pick-rate
-                .pick-rate__inner
-                  input.pick-rate__input(type="radio" id="easement-5" name="easement" value="5")
-                  label.pick-rate__label(for="easement-5") ★
-                  input.pick-rate__input(type="radio" id="easement-4" name="easement" value="4" checked)
-                  label.pick-rate__label(for="easement-4") ★
-                  input.pick-rate__input(type="radio" id="easement-3" name="easement" value="3")
-                  label.pick-rate__label(for="easement-3") ★
-                  input.pick-rate__input(type="radio" id="easement-2" name="easement" value="2")
-                  label.pick-rate__label(for="easement-2") ★
-                  input.pick-rate__input(type="radio" id="easement-1" name="easement" value="1")
-                  label.pick-rate__label(for="easement-1") ★
-                p.pick-rate__descr Удобство личного кабинета
+      h4.popup__head-title Оставьте заявку на расчет
+      p.popup__descr Перезвоним вам в течение получаса
+      form.form-request.popup__form-request
+        h4.form-request__title Как вас зовут?
+        input.form-request__field(type="text" placeholder="Например: Иван")
+        h4.form-request__title Ваш номер телефона*
+        input.form-request__field(type="text" placeholder="+7 (___) ___-__-__" required)
+        h4.form-request__title Ваш Email*
+        input.form-request__field(type="text" placeholder="Например: ivanov@mail.ru" required)
+        button.form-request__btn(type="submit") Оставить заявку
 
-        textarea.feedback__message(rows="10" cols="45" name="feedback-message" placeholder="Оставьте ваш отзыв")
-        button.btn.feedback__btn(href="#" type="submit") Отправить
+  .popup.popup_done
+    .popup__container
+      a.popup__close(href="#")
+        +svg('cross', 'popup__close-icon')
+      h4.popup__head-title.popup__head-title_center Заявка принята
+      p.popup__descr.popup__descr_center Ожидайте звонка

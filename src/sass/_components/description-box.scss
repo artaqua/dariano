@@ -1,0 +1,45 @@
+@import '_modules/variables';
+@import '_modules/mixins';
+
+.description-box {
+  max-width: 72%;
+  @include sm {
+    max-width: none;
+  }
+  &__list-tab {
+    display: inline-flex;
+    flex-direction: row;
+    border-top: 1px solid #EBEBEB;
+  }
+  &__link-tab {
+    font-size: 18px;
+    font-weight: 600;
+    color: $black;
+    padding: 18px 34px;
+    border-left: 1px solid #EBEBEB;
+    @include xs {
+      font-size: 14px;
+      padding: 12px 24px;
+    }
+    &:last-child {
+      border-right: 1px solid #EBEBEB;
+    }
+    &:hover {
+      color: $black;
+    }
+    &.tab__link_active {
+      background: #EFEFEF;
+    }
+  }
+  &__content {
+    border: 1px solid #EBEBEB;
+    padding: 20px 45px;
+    @include xs {
+      padding: 20px 30px;
+      font-size: 12px;
+    }
+    @include below(600px) {
+      padding: 10px 15px;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@import '_modules/variables';
+@import '_modules/mixins';
+
+.similar {
+  &__title {
+    font-family: $font-1;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+  }
+  &__list-similar {
+    margin-top: 30px;
+  }
+}
+.list-similar {
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    @include md {
+      margin: 0 -10px;
+    }
+    @include xs {
+      margin: 0 -7.5px;
+    }
+  }
+  &__col {
+    flex-basis: 25%;
+    max-width: 25%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 15px;
+    margin-bottom: 30px;
+    @include md {
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+    @include sm {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+    @include xs {
+      padding: 0 7.5px;
+      margin-bottom: 15px;
+    }
+    &:nth-child(even) {
+      .list-similar__item {
+        background: #EFEFEF;
+        @include sm {
+          background: linear-gradient(247.35deg, #F4E7CE -1.74%, #D6C29D 84.43%), #F4E7CE;
+        }
+      }
+    }
+    &:nth-child(4n+2),
+    &:nth-child(4n+3) {
+      @include sm {
+        .list-similar__item {
+          background: #EFEFEF;
+        }
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 410px;
+    background: linear-gradient(247.35deg, #F4E7CE -1.74%, #D6C29D 84.43%), #F4E7CE;
+    transition: all 600ms ease;
+    @include sm {
+      min-height: 220px;
+    }
+    &:hover {
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
+      .list-similar__name {
+        transform: translateX(10px);
+      }
+    }
+  }
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    color: $black;
+    margin-top: 30px;
+    margin-left: 35px;
+    transition: all 600ms ease;
+    @include md {
+      font-size: 18px;
+    }
+    @include sm {
+      font-size: 14px;
+      margin-top: 20px;
+      margin-left: 25px;
+    }
+  }
+  &__img {
+    max-height: 320px;
+    padding: 0 20px;
+    object-fit: contain;
+    object-position: left bottom;
+    @include sm {
+      max-height: 165px;
+    }
+  }
+}

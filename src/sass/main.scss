@@ -12,7 +12,7 @@
 @import '_layout/header';
 @import '_layout/sidebar-menu';
 @import '_layout/footer';
-// @import '_layout/popups';
+@import '_layout/popups';
 
 /* Components */
 @import '_components/preview-slider';
@@ -23,6 +23,8 @@
 @import '_components/breadcrumb';
 @import '_components/jumbotron';
 @import '_components/card';
+@import '_components/description-box';
+@import '_components/similar';
 
 /* Plagins */
 /* Imports from node_modules */
