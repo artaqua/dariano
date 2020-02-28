@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     const loader = document.querySelector('.loader');
     loader.classList.add('loader_hide');
-  }, 200);
+  }, 100);
 
   // Menu
   const btnMenu = document.querySelector('.btn-menu');
@@ -144,31 +144,31 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Collection
-    const listCollection = document.querySelector('.list-collection');
-    if (listCollection) {
-      const waypoint = new Waypoint({
-        element: listCollection,
-        handler: function(direction) {
-          if( direction === 'down' ) {
-            anime({
-              targets: '.list-collection__col',
-              easing: 'easeInOutSine',
-              scale: [0.8,1],
-              opacity: [0,1],
-              translateX: ['10%', 0],
-              rotateX: ['45deg',0],
-              duration: 1200,
-              delay: anime.stagger(120, {start: 300})
-            });
+    // // Collection
+    // const listCollection = document.querySelector('.list-collection');
+    // if (listCollection) {
+    //   const waypoint = new Waypoint({
+    //     element: listCollection,
+    //     handler: function(direction) {
+    //       if( direction === 'down' ) {
+    //         anime({
+    //           targets: '.list-collection__col',
+    //           easing: 'easeInOutSine',
+    //           scale: [0.8,1],
+    //           opacity: [0,1],
+    //           translateX: ['10%', 0],
+    //           rotateX: ['45deg',0],
+    //           duration: 1200,
+    //           delay: anime.stagger(60, {start: 300})
+    //         });
             
-            // Animate once
-            this.destroy();
-          }
-        },
-        offset: '100%'
-      });
-    }
+    //         // Animate once
+    //         this.destroy();
+    //       }
+    //     },
+    //     offset: '100%'
+    //   });
+    // }
   })();
   
   // Select
