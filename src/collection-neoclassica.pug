@@ -1,0 +1,80 @@
+extends pug/base
+
+append vars
+  - var title = 'Collection'
+
+block styles
+  link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Playfair+Display:400,400i,700,700i&display=swap&subset=cyrillic" rel="stylesheet")
+  link(href=`assets/css/main.css` rel="stylesheet")
+
+block content
+  main
+    .layout__content
+      .page-collection
+        .container-fluid
+          .layout__wrapper
+            .layout__sidebar
+              // Sidebar
+              aside.sidebar-page
+                .category
+                  a.category-head-link(href="#")
+                    +svg('catalog', 'category-head-link__icon')
+                    span.category-head-link__name Категории
+                  ul.list-category.category__list-category
+                    li.list-category__item 
+                      a.list-category__link(href="#") Классические двери
+                        +svg('arrow-category', 'list-category__icon')
+                    li.list-category__item 
+                      a.list-category__link(href="#") Неоклассика
+                        +svg('arrow-category', 'list-category__icon')
+                    li.list-category__item 
+                      a.list-category__link(href="#") Современный стиль
+                        +svg('arrow-category', 'list-category__icon')
+                    li.list-category__item 
+                      a.list-category__link(href="#") Дизайн
+                        +svg('arrow-category', 'list-category__icon')
+                    li.list-category__item 
+                      a.list-category__link(href="#") Цельностеклянные двери
+                        +svg('arrow-category', 'list-category__icon')
+
+
+            .layout__container
+              // Content
+              .collection
+                .breadcrumb
+                  ul.breadcrumb__list
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="#") Главная
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="#") Каталог
+                    li.breadcrumb__item Коллекция Neoclassica
+
+                .title-sm Коллекция Neoclassica
+
+                .jumbotron.collection__jumbotron
+                  .jumbotron__container.lazy(data-bg="url(assets/img/collection/jumbotron/neoclassica.png)" href="#")
+                    h4.jumbotron__title Коллекция Neoclassica
+                    p.jumbotron__descr Двери премиум класса, изготовленные с применением ценных пород дерева, европейского шпона и итальянской эмали. Эти двери для тех, кто привык выбирать лучшее. Резные элементы, выполненные по эскизам авторской работы, изящество и грация, изысканный цвет отделки, благородные пропорции, естественная элегантность.
+
+                .list-collection.collection__list-collection
+                  .list-collection__row
+                    .list-collection__col
+                      a.list-collection__item(href="card.html")
+                        span.list-collection__name Лион
+                        img.list-collection__img.lazy(data-src="assets/img/collection/product-min/img-41.png", alt="")
+                    .list-collection__col
+                      a.list-collection__item(href="card.html")
+                        span.list-collection__name Бостон
+                        img.list-collection__img.lazy(data-src="assets/img/collection/product-min/img-36.png", alt="")
+                    .list-collection__col
+                      a.list-collection__item(href="card.html")
+                        span.list-collection__name Соренто
+                        img.list-collection__img.lazy(data-src="assets/img/collection/product-min/img-56.png", alt="")
+                    .list-collection__col
+                      a.list-collection__item(href="card.html")
+                        span.list-collection__name Махаон
+                        img.list-collection__img.lazy(data-src="assets/img/collection/product-min/img-45.png", alt="")
+                    
+        
+        
+

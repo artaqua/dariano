@@ -79,8 +79,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
     background: $white;
+    padding-left: 30px;
+    padding-right: 30px;
     @include below(600px) {
       width: auto;
       padding: 0 50px;
