@@ -80,17 +80,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }, false);
 
   // Preview slider
-  const swiper = new Swiper('.preview-slider', {
-    speed: 700,
-    effect: 'fade',
-    autoplay: {
-      delay: 7000,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-  });
+  const previewSlider = document.querySelector('.preview-slider');
+  if ( previewSlider ) {
+    const swiper = new Swiper('.preview-slider', {
+      speed: 700,
+      effect: 'fade',
+      autoplay: {
+        delay: 7000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+    });
+  }
 
   // SlideToggle category
   const categoryHeadLink = document.querySelector('.category-head-link');
@@ -305,29 +308,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })();
 
-  // Slider card gallery
-  const galleryThumbs = new Swiper('.gallery-thumbs', {
-    loop: true,
-    centeredSlides: true,
-    spaceBetween: 0,
-    slidesPerView: 3,
-    direction: 'vertical',
-    slideToClickedSlide: true,
-  });
-  const galleryTop = new Swiper('.gallery-top', {
-    effect: 'fade',
-    loop: true,
-    centeredSlides: true,
-    slidesPerView: 1,
-    initialSlide: 0,
-    slideToClickedSlide: true,
-    autoHeight: true,
-    thumbs: {
-      swiper: galleryThumbs,
-    }
-  });
-  galleryThumbs.update();
-  galleryTop.update();
+  const galleryElems = document.querySelectorAll('.gallery-thumbs, .gallery-top');
+  if ( galleryElems ) {
+    // Slider card gallery
+    const galleryThumbs = new Swiper('.gallery-thumbs', {
+      loop: true,
+      centeredSlides: true,
+      spaceBetween: 0,
+      slidesPerView: 3,
+      direction: 'vertical',
+      slideToClickedSlide: true,
+    });
+    const galleryTop = new Swiper('.gallery-top', {
+      effect: 'fade',
+      loop: true,
+      centeredSlides: true,
+      slidesPerView: 1,
+      initialSlide: 0,
+      slideToClickedSlide: true,
+      autoHeight: true,
+      thumbs: {
+        swiper: galleryThumbs,
+      }
+    });
+    galleryThumbs.update();
+    galleryTop.update();
+  }
+  
 
   // Вызов заявки
   const btnRequest = document.querySelectorAll('.product-options__btn');
