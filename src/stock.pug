@@ -1,0 +1,54 @@
+extends pug/base
+
+append vars
+  - var title = 'Stock'
+
+block content
+  main
+    .layout__content
+      .page-collection
+        .container-fluid
+          .layout__wrapper
+            .stocks
+              .breadcrumb.card__breadcrumb
+                .breadcrumb__body
+                  ul.breadcrumb__list
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="index.html") Главная
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="catalog-stocks.html") Акции
+                    li.breadcrumb__item Условия акции
+              h3.title-sm Условия акции
+              .stock-info.stocks__stock-info
+                .stock-info__row
+                  .stock-info__col-left
+                    .stock-info__preview.lazy(data-bg="url(assets/img/catalog/img-1.jpg)")
+                      .stock-info__preview-wrapper
+                        .catalog-stocks__percent-info
+                          span.catalog-stocks__percent -20%
+                          p.catalog-stocks__percent-descr на двери и погонажные изделия к ним*
+                  .stock-info__col-right
+                    h5.stock-info__title Уважаемые покупатели!
+                    p C 28.12.2019 по 03.02.20020 действует акция "Новогоднее предложение". Скидка на полотна и на все погонажные изделия составляет 20%.
+                    h5.stock-info__title-list Условия участия:
+                    p
+                      b 1
+                      |. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis a totam reiciendis eum in dolores beatae amet iusto odit molestiae quia rem, eaque tempora natus dignissimos cum esse provident possimus.
+                    p
+                      b 2
+                      |. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis a totam reiciendis eum in dolores beatae amet iusto odit molestiae quia rem, eaque tempora natus dignissimos cum esse provident possimus.
+                    p
+                      b 3
+                      |. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis a totam reiciendis eum in dolores beatae amet iusto odit molestiae quia rem, eaque tempora natus dignissimos cum esse provident possimus.
+                    p
+                      b 4
+                      |. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis a totam reiciendis eum in dolores beatae amet iusto odit molestiae quia rem, eaque tempora natus dignissimos cum esse provident possimus.
+                    p
+                      b 5
+                      |. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis a totam reiciendis eum in dolores beatae amet iusto odit molestiae quia rem, eaque tempora natus dignissimos cum esse provident possimus.
+                    p
+                      b 6
+                      |. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis a totam reiciendis eum in dolores beatae amet iusto odit molestiae quia rem, eaque tempora natus dignissimos cum esse provident possimus.
+        
+        
+

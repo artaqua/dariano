@@ -1,0 +1,51 @@
+extends pug/base
+
+append vars
+  - var title = 'Reviews'
+
+block content
+  main
+    .layout__content
+      .page-collection
+        .container-fluid
+          .layout__wrapper
+            .reviews
+              .breadcrumb.card__breadcrumb
+                .breadcrumb__body
+                  ul.breadcrumb__list
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="index.html") Главная
+                    li.breadcrumb__item Отзывы
+              h3.title-sm Отзывы
+
+              .list-platforms.reviews__list-platforms
+                .list-platforms__row
+                  a.list-platforms__item(href="#")
+                    span.list-platforms__count 10 отзывов
+                    img.list-platforms__img.lazy(data-src="assets/img/reviews/platforms/yandex.jpg", alt="")
+                  a.list-platforms__item(href="#")
+                    span.list-platforms__count 15 отзывов
+                    img.list-platforms__img.lazy(data-src="assets/img/reviews/platforms/flamp.jpg", alt="")
+                  a.list-platforms__item(href="#")
+                    span.list-platforms__count 20 отзывов
+                    img.list-platforms__img.lazy(data-src="assets/img/reviews/platforms/otzovik.jpg", alt="")
+                  
+
+              .list-reviews.reviews__list-reviews
+                .list-reviews__row
+                  .list-reviews__item
+                    .list-reviews__head
+                      .list-reviews__person.lazy(data-bg="url(assets/img/reviews/girl.jpg)")
+                      .list-reviews__info
+                        span.list-reviews__name Александра Петрова
+                        span.list-reviews__date 02.02.2020
+                    p.list-reviews__descr Современые технологии достигли такого уровня что, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde rerum, sapiente dolorem sint voluptate, eligendi incidunt id distinctio enim nobis facilis necessitatibus accusamus itaque ipsam deleniti expedita ullam deserunt! Explicabo, ad iure harum fuga adipisci assumenda perferendis nostrum eius numquam necessitatibus temporibus, quas ipsum illum repudiandae culpa quis itaque eum ab voluptates laborum quod error. Molestias nobis, commodi eveniet. Rem ratione quia, asperiores cumque repudiandae quisquam quibusdam facere iste, magni eaque impedit, quae ut placeat hic facilis tenetur beatae nam, voluptatibus molestias aliquid voluptatem assumenda. Ullam, fugiat fugit, tempore eveniet aut dolores, quibusdam dolor, quia qui inventore placeat voluptate. Culpa illum sed error impedit, corporis qui eum maiores esse est molestiae voluptates nam aspernatur quia voluptatibus, cupiditate enim. Ratione facilis quae, pariatur deserunt soluta vel deleniti. Iure, quam!
+                  .list-reviews__item
+                    .list-reviews__head
+                      .list-reviews__person.lazy(data-bg="url(assets/img/reviews/girl.jpg)")
+                      .list-reviews__info
+                        span.list-reviews__name Александра Петрова
+                        span.list-reviews__date 02.02.2020
+                    p.list-reviews__descr  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex quis nam, doloribus, earum aliquid quibusdam eos, perferendis illum dolores placeat sapiente, maiores. Incidunt, neque distinctio hic voluptas consequuntur facilis vitae vel asperiores explicabo consequatur cupiditate libero reiciendis, in sint molestiae perspiciatis cumque ipsum optio. Similique voluptas quaerat, fuga expedita eligendi!
+        
+

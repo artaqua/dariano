@@ -1,0 +1,54 @@
+extends pug/base
+
+append vars
+  - var title = 'Catalog Stocks'
+
+block content
+  main
+    .layout__content
+      .page-collection
+        .container-fluid
+          .layout__wrapper
+            .stocks
+              .breadcrumb.card__breadcrumb
+                .breadcrumb__body
+                  ul.breadcrumb__list
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="#") Главная
+                    li.breadcrumb__item Акции
+              h3.title-sm Акции
+              .catalog-stocks.stocks__catalog-stocks
+                .catalog-stocks__row
+                  .catalog-stocks__col
+                    a.catalog-stocks__item.lazy(data-bg="url(assets/img/catalog/img-1.jpg)" href="stock.html")
+                      .catalog-stocks__percent-info
+                        span.catalog-stocks__percent -20%
+                        p.catalog-stocks__percent-descr на двери и погонажные изделия к ним*
+                      h5.catalog-stocks__title Заголовок на новости
+                      p.catalog-stocks__descr Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae iste accusantium, laborum est similique
+                  .catalog-stocks__col
+                    a.catalog-stocks__item.lazy(data-bg="url(assets/img/catalog/img-1.jpg)" href="stock.html")
+                      h5.catalog-stocks__title Заголовок на новости
+                      p.catalog-stocks__descr Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae iste accusantium, laborum est similique
+                  .catalog-stocks__col
+                    a.catalog-stocks__item.lazy(data-bg="url(assets/img/catalog/img-1.jpg)" href="stock.html")
+                      h5.catalog-stocks__title Заголовок на новости
+                      p.catalog-stocks__descr Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae iste accusantium, laborum est similique
+                  .catalog-stocks__col
+                    a.catalog-stocks__item.lazy(data-bg="url(assets/img/catalog/img-1.jpg)" href="stock.html")
+                      .catalog-stocks__percent-info
+                        span.catalog-stocks__percent -20%
+                        p.catalog-stocks__percent-descr на двери и погонажные изделия к ним*
+                      h5.catalog-stocks__title Заголовок на новости
+                      p.catalog-stocks__descr Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae iste accusantium, laborum est similique
+                  .catalog-stocks__col
+                    a.catalog-stocks__item.lazy(data-bg="url(assets/img/catalog/img-1.jpg)" href="stock.html")
+                      h5.catalog-stocks__title Заголовок на новости
+                      p.catalog-stocks__descr Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae iste accusantium, laborum est similique
+                  .catalog-stocks__col
+                    a.catalog-stocks__item.lazy(data-bg="url(assets/img/catalog/img-1.jpg)" href="stock.html")
+                      h5.catalog-stocks__title Заголовок на новости
+                      p.catalog-stocks__descr Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam molestiae iste accusantium, laborum est similique
+        
+        
+
