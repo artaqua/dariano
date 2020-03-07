@@ -308,8 +308,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })();
 
-  const galleryElems = document.querySelectorAll('.gallery-thumbs, .gallery-top');
-  if ( galleryElems ) {
+  const galleryElem = document.querySelector('.gallery-top');
+  if ( galleryElem ) {
     // Slider card gallery
     const galleryThumbs = new Swiper('.gallery-thumbs', {
       loop: true,
@@ -334,7 +334,6 @@ document.addEventListener("DOMContentLoaded", () => {
     galleryThumbs.update();
     galleryTop.update();
   }
-  
 
   // Вызов заявки
   const btnRequest = document.querySelectorAll('.product-options__btn');
@@ -378,5 +377,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
+  const slederInContacts = document.querySelector('.gallery-contacts');
+  if ( slederInContacts ) {
+    // Slider gallery contacts
+    const galleryContacts = new Swiper('.gallery-contacts', {
+      speed: 700,
+      // autoHeight: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+    });
+  }
+
 
 });

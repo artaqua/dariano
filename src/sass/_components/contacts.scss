@@ -1,0 +1,232 @@
+@import '_modules/variables';
+@import '_modules/mixins';
+
+.contacts {
+  display: block;
+  width: 100%;
+  &__box {
+    background-position: right top;
+    background-repeat: no-repeat;
+    padding-top: 40px;
+    @include xs {
+      background: none !important;
+    }
+  }
+  &__preview-img {
+    display: block;
+    width: 100%;
+  }
+  &__list-delivery {
+    margin-top: 60px;
+    @include xs {
+      margin-top: 40px;
+    }
+  }
+}
+.list-contacts {
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -20px;
+    padding: 0 40px;
+    @include md {
+      padding: 0;
+    }
+    @include xs {
+      margin: 0;
+    }
+  }
+  &__col-left {
+    flex: 0 0 55%;
+    max-width: 55%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    @include xs {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    @include below(500px) {
+      padding: 0;
+    }
+  }
+  &__col-right {
+    flex: 0 0 45%;
+    max-width: 45%;
+    padding: 0 20px;
+    @include xs {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-top: 30px;
+      padding: 0;
+    }
+    @include below(500px) {
+      padding: 0;
+      margin-top: 20px;
+    }
+  }
+  &__head-title {
+    margin: 0;
+    font-size: 22px;
+    font-family: $font-1;
+    font-weight: 700;
+    color: $black;
+    margin-bottom: 30px;
+  }
+  &__inline {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 10px 0;
+  }
+  &__descr {
+    margin: 0;
+  }
+  &__icon {
+    width: 14px;
+    height: 14px;
+    fill: $gold;
+    margin-right: 15px;
+    margin-top: 4px;
+    &_location {
+      fill: $red;
+    }
+  }
+  &__link {
+    display: inline-block;
+    color: $green;
+    text-decoration: underline;
+    margin-top: 15px;
+  }
+  &__btn {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-2;
+    font-size: 14px;
+    font-weight: 700;
+    color: $white;
+    padding: 0 25px;
+    height: 55px;
+    background-color: #00523B;
+    border-radius: 6px;
+    transition: all 300ms ease;
+    margin-top: 10px;
+    &:hover {
+      background-color: lighten(#00523B,3%);
+    }
+  }
+}
+
+.gallery-contacts {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: $white;
+  &__img {
+    display: block;
+    width: 100%;
+  }
+  .swiper-pagination {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+    margin-top: 25px;
+    @include below(650px) {
+      margin-top: 15px;
+    }
+  }
+  .swiper-pagination-bullet {
+    transform: none;
+    border-radius: 50%;
+    transition: all 300ms ease;
+    margin: 0 6px !important;
+  }
+}
+.list-delivery {
+  position: relative;
+  overflow: hidden;
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 -70px;
+    padding: 0 40px;
+    @include md {
+      padding: 0;
+    }
+    @include sm {
+      margin: 0 -40px;
+    }
+    @include xs {
+      margin: 0;
+    }
+  }
+  &__col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 70px;
+    display: flex;
+    flex-direction: column;
+    @include sm {
+      padding: 0 40px;
+    }
+    @include xs {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 0 20px; 
+      margin-bottom: 20px;
+    }
+    @include below(500px) {
+      padding: 0;
+    }
+  }
+  &__head-title {
+    display: flex;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0;
+    font-size: 22px;
+    font-family: $font-1;
+    font-weight: 700;
+    color: $black;
+    margin-bottom: 40px;
+    padding: 0 70px;
+    @include sm {
+      padding: 0 40px;
+    }
+    @include xs {
+      padding: 0 20px; 
+      margin-bottom: 30px;
+    }
+    @include below(500px) {
+      padding: 0;
+    }
+  }
+  &__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 10px;
+    @include below(500px) {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  &__icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    fill: $green;
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+  }
+}

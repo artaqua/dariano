@@ -61,6 +61,9 @@
     @include below(500px) {
       padding: 0 15px;
     }
+    @include below(400px) {
+      padding: 0;
+    }
   }
   &__item {
     margin: 30px 0;

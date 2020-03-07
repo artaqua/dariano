@@ -1,0 +1,85 @@
+extends pug/base
+
+append vars
+  - var title = 'Delivery'
+
+block content
+  main
+    .layout__content
+      .page-collection
+        .container-fluid
+          .layout__wrapper
+            .contacts
+              .breadcrumb.card__breadcrumb
+                .breadcrumb__body
+                  ul.breadcrumb__list
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="index.html") Главная
+                    li.breadcrumb__item Доставка
+              h3.title-sm Доставка
+              
+              .contacts__box.lazy(data-bg="url(assets/img/popular-styles/dots.png)")
+                .list-contacts
+                  .list-contacts__row
+                    .list-contacts__col-left
+                      h4.list-contacts__head-title Самовывоз
+                      .list-contacts__inline
+                        +svg('location', 'list-contacts__icon list-contacts__icon_location')
+                        p.list-contacts__descr ТЦ "НА ПТИЧКЕ"
+                          br
+                          | г. Самара, ул. Ново-Вокзальная 2а
+                          br
+                          | 1 этаж секция 1-22
+                          br
+                          | 3 этаж секции 3-23, 3-16, 3-28Б, 3-11, 3-28А, 3-28Б
+                      .list-contacts__inline
+                        +svg('clock', 'list-contacts__icon')
+                        p.list-contacts__descr Режим работы: Пн-Пт с 9 до 18, Сб-Вс с 9 до 17
+                      .list-contacts__inline
+                        +svg('phone', 'list-contacts__icon')
+                        p.list-contacts__descr
+                          a.list-contacts__phone(href="tel:+89370793539")
+                            | Менеджер
+                            br
+                            | 8 (937) 079-35-39
+                      .list-contacts__inline
+                        +svg('phone', 'list-contacts__icon')
+                        p.list-contacts__descr
+                          a.list-contacts__phone(href="tel:+89270177334")
+                            | Напольные покрытия - Александр
+                            br
+                            | 8 (927) 017-73-34
+                      .list-contacts__inline
+                        +svg('phone', 'list-contacts__icon')
+                        p.list-contacts__descr
+                          a.list-contacts__phone(href="tel:+89272606337")
+                            | Межкомнатные двери - Станислав
+                            br
+                            | 8 (927) 260-63-37
+                          a.list-contacts__link(href="https://goo.gl/maps/Vyw5ihm7vuhWn7KB9" target="_blink") Показать на карте
+                    .list-contacts__col-right
+                      img.contacts__preview-img.lazy(data-src="assets/img/contacts/slider/1.jpg", alt="")
+              
+                .list-delivery.contacts__list-delivery
+                  .list-delivery__row
+                    h4.list-delivery__head-title Доставка
+                    .list-delivery__col
+                      h5.list-delivery__title
+                        +svg('truck', 'list-delivery__icon')
+                        | Логистическая компания
+                      p Доставка осуществляется компаниями-перевозчиками. По вашему желанию мы можем осуществить доставку через какую-либо другую транспортную компанию, для этого достаточно предупредить об этом сотрудника отдела продаж при оформлении заказа.
+                        br
+                        br
+                        | В этом случае ваш заказ будет отправлен через выбранную вами компанию в течении 1-5 дней после поступления денег на наш расчетный счет.
+                    .list-delivery__col
+                      h5.list-delivery__title
+                        +svg('courier', 'list-delivery__icon')
+                        | Курьерская служба
+                      p Мы осуществляем доставку по Самаре и Самарской области курьерской службой.
+                        br
+                        br
+                        | Курьерская доставка осуществляется в течении 1 рабочего дня после подтверждения заказа.
+                        br
+                        br
+                        | Стоимость доставки уточняйте у оператора.
+

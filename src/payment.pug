@@ -1,0 +1,36 @@
+extends pug/base
+
+append vars
+  - var title = 'Delivery'
+
+block content
+  main
+    .layout__content
+      .page-collection
+        .container-fluid
+          .layout__wrapper
+            .contacts
+              .breadcrumb.card__breadcrumb
+                .breadcrumb__body
+                  ul.breadcrumb__list
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="index.html") Главная
+                    li.breadcrumb__item Оплата
+              h3.title-sm Оплата
+              
+              .list-delivery.contacts__list-delivery
+                .list-delivery__row
+                  .list-delivery__col
+                    h5.list-delivery__title
+                      +svg('wallet', 'list-delivery__icon')
+                      | Наличными
+                    p Оплата наличными возможна в розничных магазинах при самовывозе товара
+                      br
+                      br
+                      | Оплата наличными возможна при получении товара от курьерской службы
+                  .list-delivery__col
+                    h5.list-delivery__title
+                      +svg('card', 'list-delivery__icon')
+                      | Безналичный расчет
+                    p Вы можете оплатить товар банковским переводом со счета организации, для этого нужно направить запрос на электронную почту, мы сформируем счет для оплаты и отправим вам его на электронную почту. При поступлении оплаты вы можете забрать товар самовывозом или воспользоваться услугами доставки. При получении к товару соответственно прилагаются "закрывающие" документы.
+

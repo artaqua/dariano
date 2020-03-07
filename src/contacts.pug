@@ -1,0 +1,67 @@
+extends pug/base
+
+append vars
+  - var title = 'Contacts'
+
+block content
+  main
+    .layout__content
+      .page-collection
+        .container-fluid
+          .layout__wrapper
+            .contacts
+              .breadcrumb.card__breadcrumb
+                .breadcrumb__body
+                  ul.breadcrumb__list
+                    li.breadcrumb__item
+                      a.breadcrumb__link(href="index.html") Главная
+                    li.breadcrumb__item Контакты
+              h3.title-sm Контакты
+              
+              .contacts__box.lazy(data-bg="url(assets/img/popular-styles/dots.png)")
+                .list-contacts
+                  .list-contacts__row
+                    .list-contacts__col-left
+                      h4.list-contacts__head-title Телефоны и адреса
+                      .list-contacts__inline
+                        +svg('location', 'list-contacts__icon list-contacts__icon_location')
+                        p.list-contacts__descr ТЦ "НА ПТИЧКЕ"
+                          br
+                          | г. Самара, ул. Ново-Вокзальная 2а
+                          br
+                          | 1 этаж секция 1-22
+                          br
+                          | 3 этаж секции 3-23, 3-16, 3-28Б, 3-11, 3-28А, 3-28Б
+                          br
+                          a.list-contacts__link(href="https://goo.gl/maps/Vyw5ihm7vuhWn7KB9" target="_blink") Показать на карте
+                      .list-contacts__inline
+                        +svg('clock', 'list-contacts__icon')
+                        p.list-contacts__descr Режим работы: Пн-Пт с 9 до 18, Сб-Вс с 9 до 17
+                      .list-contacts__inline
+                        +svg('phone', 'list-contacts__icon')
+                        p.list-contacts__descr
+                          a.list-contacts__phone(href="tel:+89370793539") 8 (937) 079-35-39
+                      .list-contacts__inline
+                        +svg('mail', 'list-contacts__icon')
+                        p.list-contacts__descr
+                          a.list-contacts__mail(href="mailto:info.pochtaa@mail.ru") info.pochtaa@mail.ru
+                      .list-contacts__inline
+                        button.list-contacts__btn Cвязаться с менеджером
+
+                    .list-contacts__col-right
+                      .swiper-container.gallery-contacts
+                        .swiper-wrapper
+                          .swiper-slide
+                            img.gallery-contacts__img.lazy(data-src="assets/img/contacts/slider/1.jpg", alt="")
+                          .swiper-slide
+                            img.gallery-contacts__img.lazy(data-src="assets/img/contacts/slider/1.jpg", alt="")
+                          .swiper-slide
+                            img.gallery-contacts__img.lazy(data-src="assets/img/contacts/slider/1.jpg", alt="")
+                          .swiper-slide
+                            img.gallery-contacts__img.lazy(data-src="assets/img/contacts/slider/1.jpg", alt="")
+                          .swiper-slide
+                            img.gallery-contacts__img.lazy(data-src="assets/img/contacts/slider/1.jpg", alt="")
+                        .swiper-pagination
+              
+        
+
