@@ -382,7 +382,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Slider gallery contacts
     const galleryContacts = new Swiper('.gallery-contacts', {
       speed: 700,
-      // autoHeight: true,
       pagination: {
         el: '.swiper-pagination',
         clickable: true

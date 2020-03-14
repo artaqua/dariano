@@ -2,7 +2,7 @@ var webpack = require("webpack");
 var path = require("path");
 
 module.exports = {
-  mode: 'development', /* Минимизация js ===> mode: 'development' || 'production' */
+  mode: 'production', /* Минимизация js ===> mode: 'development' || 'production' */
   entry: {
     'bundle': './src/js/main.js',
   },

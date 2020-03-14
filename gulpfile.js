@@ -103,7 +103,7 @@ gulp.task('style:build', function(done) {
     }))
     .pipe(autoprefixer())
     // Минимизация css
-    // .pipe(cleanCSS())
+    .pipe(cleanCSS())
     .pipe(gulp.dest(path.build.css))
     .pipe(browserSync.stream());
 });
